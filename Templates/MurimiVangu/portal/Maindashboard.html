@@ -1,0 +1,123 @@
+{% include 'style.html'%}
+{%block content%} {%load static%}
+<body>
+  <nav
+      class="navbar navbar-expand-sm navbar-light shadow p-3 mb-5 bg-body menu   "
+    >
+      <div class="container-fluid">
+        <a href="{% url "home" %}" class="navbar-brand logo-title">
+          MURIMI <span class="sub-logo">VANGU</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse position-absolute top-0 start-50 translate-middle-x navbar-links"
+          id="navbarNavAltMarkup"
+        >
+       
+          <div class="navbar-nav text-end"> 
+          <a class="nav-link .navs-link login-nav " href="{% url "blog"%}">Signed in as {{user.username}}</a>
+            <a href="{% url "logout" %}" class="text-start nav-link .navs-link a-tags  ">logout</a>
+          </div> 
+        </div>
+        </div> 
+      </div>
+    </nav>
+
+     {% comment %} <a class="text-start"> Back to main dashbard </a> {% endcomment %}
+    <section class="text-start my-5 mx-sm-5">
+    <div class="start-center container">
+      {% for message in messages %} {% if message.tags == 'success'%}
+      <div class="error-class">
+        <p class="bg-success lead">{{message}}</p>
+        {%endif%} {%endfor%}
+    </div>
+  
+        <div class="  row g-5">
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div class="header-blue ">
+                <h3>Welcome
+                </br>
+                    {{user.first_name}} {{user.last_name}}</h3>
+              </div>
+             <hr>
+                <div class="a-tags my-link">
+                  {%if request.user.username == 'takudzwa'%}
+                  <a class href="{% url "dashboard"%}">Back to main Dashboard</a>
+                  {%else%}
+                <a class href="{% url "profile"%}">Edit Profile</a>
+                <a href="#">Account Settings</a>
+                <a href="#">Change Password</a>
+                {%endif%}
+              </div>
+            </div>
+          </div>
+                 <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >My Aplications</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="#">Farmer Application</a>
+                <a href="#">Fowl Run System Application</a>
+                <a href="#">Agronomist Application</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+               <div class="header-grey ">
+                <h3>My FowlRun</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="{%url 'conditions'%}">View Conditions</a>
+                <a href="{%url 'conditions'%}">View List of Conditions</a>
+                <a href="{%url 'secondMVdashboard'%}">Control My FowlRun</a>
+                <a href="{%url 'secondMVdashboard'%}">My Animals</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div class="header-grey ">
+                <h3 >Farmer</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="{%url 'CreateProblem'%}">My Problems</a>
+                <a href="#">Realeted Tips</a>
+                <a href="#">Related Blogs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >Agronomist</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="#">My Tips</a>
+                <a href="#">My Blogs</a>
+                <a href="#">Farmers Problems</a>
+              </div>
+            </div>
+          </div>
+   
+        </div>    
+      </section>
+<script src="../JS/services.js"></script>
+{%endblock content%}
+

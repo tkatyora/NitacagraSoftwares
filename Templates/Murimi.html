@@ -1,0 +1,115 @@
+{% include 'style.html'%}
+{%load static %}
+
+
+  <body>
+    <!-- the navbar -->
+    <nav
+      class="navbar navbar-expand-sm navbar-light shadow p-3 mb-5 bg-body rounded fixed-top menu"
+    >
+      <div class="container-fluid">
+        <a href="{% url "home" %}" class="navbar-brand ms-1 logo-title">
+          NITACAGRA<span class="sub-logo">SOFTWARES</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse position-absolute top-0 start-50 translate-middle-x navbar-links"
+          id="navbarNavAltMarkup"
+        >
+        {%if not user.is_authenticated%}
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="{% url "home" %}">Home</a>
+                <div class="dropdown">
+                  <a class="nav-link .navs-link" href="{% url "services"%}">Our Services</a>
+                  {% comment %} <div id="services" class = "service-items">
+                    <a class="nav-link" href="{% url "services"%}"> Services</a>
+                    <a class="nav-link" href="{% url "products"%}">Products</a>
+                  <a class="nav-link" href="{% url "projectsGuides"%}">Project</a>
+                  </div> {% endcomment %}
+                  
+                </div>
+            </li>
+            <a class="nav-link .navs-link " href="{% url "murimiwangu" %}"
+              >MurimiWangu</a
+            >
+            <a class="nav-link .navs-link" href="{% url "blog"%}">Blog</a>
+            <a class="nav-link .navs-link" href="{% url "about" %}">About us</a>
+          
+          </div>
+        </div>
+  
+        <a class="nav-link login" href="{% url "sign_in" %}">| Sign In</a>
+        {%else%}
+        <div class ='text-center'>
+        <a class="nav-link  text-end sm-5 login" href="{% url "logout" %}">| LogOut</a>
+        </br>
+        <a href="" class="text-start nav-link .navs-link login ">Signed in as {{user.username}}</a>
+        </div>
+        {%endif%}
+      </div>
+    </nav>
+    {% block content %} {% endblock content %}
+    <script src="{% static '../static/admin/style/js/bootstrap.bundle.js'%}"></script>
+  </body>
+  <footer>
+    <div class="footer text-start">
+      <div class="first-col">
+        <h3>Follow Us</h3>
+        <p>
+          <a href="https://www.instagram.com/">
+            <img
+              src=" {% static '../static/admin/imagies/instagram.webp' %}"
+              alt=""
+            />Instagram
+          </a>
+        </p>
+        <p>
+          <a href="https://twitter.com/home"
+            ><img
+              src="{% static '../static/admin/imagies/Twitter.png' %}"
+              alt=""
+            />
+            Twitter
+          </a>
+        </p>
+        <p>
+          <a href="https://www.facebook.com/"
+            ><img
+              src="{% static '../static/admin/imagies/download.png' %}"
+              alt=""
+            />Facebook
+          </a>
+        </p>
+      </div>
+      <div class="mid-column">
+        <h3>Contact Us</h3>
+        <p>email:tnctelecomms@gmail.com</p>
+        <p>cell :0773735227</p>
+        <p class="cell">:0786812481</p>
+      </div>
+      <div class="right-column">
+        <h3>Address</h3>
+        <p>
+          MUTARE <br />
+          HARARE
+        </p>
+      </div>
+    </div>
+    <hr />
+
+    <p class="developers">Develped by TNG GROUP@<span id="time"></span></p>
+  </footer>
+  <script src="../JS/index.js"></script>
+</html>
+
+

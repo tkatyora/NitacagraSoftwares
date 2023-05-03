@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {%block content%} {%load static%}
+
+<body>
+  {% load crispy_forms_tags %}
+  <br />
+  <br />
+  <form id="form-id" class="shadow-lg mt-5" name="form" method="POST" action="">
+    {% csrf_token %}
+    <br />
+    <div class="message mt-3 text-center">
+      <h3>Thanks for Choosing Us</h3>
+      <h6>Please Enter Your Details</h6>
+    </div>
+    {% for message in messages %} {% if message.tags == 'warning'%}
+    <div class="error-class">
+      <p class="error">{{message}}</p>
+    </div>
+    {%endif%} {%endfor%}
+    <div class="form my-5">
+      <p class="lead">
+        <strong>{{form.FullName|as_crispy_field}}</strong>
+      </p>
+      <p class="lead">
+        <strong>{{form.Email|as_crispy_field}}</strong>
+      </p>
+      <p class="lead">
+        <strong>{{form.PhoneNumber|as_crispy_field}}</strong>
+      </p>
+      <p class="lead">
+        <strong>{{form.Location|as_crispy_field}}</strong>
+      </p>
+      <p class="lead">
+        <strong>{{form2.ReceivedDate|as_crispy_field}}</strong>
+      </p>
+      <p class="lead">
+        <strong>{{form.Account|as_crispy_field}}</strong>
+      </p>
+    </div>
+    <div class="text-center">
+      <button
+        type="button"
+        id="cancel"
+        class="btn btn-secondary button buy home more"
+      >
+        <a href="{% url 'services'%}"> cancel</a>
+      </button>
+      <button type="submit" class="btn btn-secondary ms-5 button more">
+        Submit
+      </button>
+      <br />
+      <br />
+    </div>
+  </form>
+  <script src="{% static '../static/JS/buy.js'%}"></script>
+</body>
+{%endblock content%}

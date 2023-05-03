@@ -1,0 +1,70 @@
+{% extends 'Navbars-footers/MVdashbaordNavbar.html' %} {%load static%}
+<body>
+  {%block content%}
+  <section class="text-start my-5 mx-sm-5">
+    <form id="form-id" class="shadow-lg Pic-info mt-5">
+      <br />
+      <div class="mx-sm-5">
+        <div class="header-grey mt-3">
+          <h4>Condition Recored in Your FowlRun</h4>
+        </div>
+        <hr />
+        {%for condition in conditions%}
+        {% comment %} {% if condition.Farmer == user.username %} {% endcomment %}
+        <div class="lead">
+          <p>
+            Temperature :
+            <strong>{{condition.Temperature}} Degrees</strong>
+          </p>
+          <p>Humidty :<strong> {{condition.Humidity}} Pka</strong></p>
+          <p>Last Recored at :<strong> {{condition.Update_on}}</strong></p>
+          <p>Recored at :<strong> {{condition.Recorded_on}}</strong></p>
+          <div>
+            Comment:
+            <br />
+            {%if condition.Temperature > 30 and condition.Humidity > 30 %}
+            <p><strong> Temperature and Humidity Above Normal Correct Immediate</strong></p>
+            {%elif condition.Temperature < 30 and condition.Humidity < 30 %}
+            <p><strong> Temperature and Humidity Below Normal Correct Immediate</strong></p>
+            {%elif condition.Temperature > 30 and condition.Humidity < 30 %}
+            <p><strong> Temperature is Above and Humidity Below Normal Correct Immediate</strong></p>
+            {%elif condition.Temperature < 30 and condition.Humidity < 30 %}
+            <p><strong> Temperature is Below and Humidity Below Normal Correct Immediate</strong></p>
+            {%elif condition.Temperature < 30 and condition.Humidity > 30 %}
+            <p><strong> Temperature is Below and Humidity Above Normal Correct Immediate</strong></p>
+            {%elif condition.Temperature == 30 and condition.Humidity > 30 %}
+            <p><strong> Temperature is at Normal and Humidity Above Normal Correct Humidity Immediate</strong></p>
+            {%elif condition.Temperature < 30 and condition.Humidity == 30 %}
+            <p><strong> Temperature is Below and Humidity is at Normal Correct The Temperature Immediate</strong></p>
+            {%elif condition.Temperature == 30 and condition.Humidity < 30 %}
+            <p><strong> Temperature is at Normal and Humidity Below Normal Correct Humidity Immediate</strong></p>
+            {%elif condition.Temperature > 30 and condition.Humidity == 30 %}
+            <p><strong> Temperature is Above and Humidity is at Normal Correct The Temperature Immediate</strong></p>
+             {%elif condition.Temperature == 30 and condition.Humidity == 30 %}
+            <p><strong> Temperature  and Humidity Are At Normal</strong></p>
+            {%endif%}
+          </h4>
+            {% comment %} {%endif%} {% endcomment %}
+          {%endfor%}
+        </div>
+        <hr />
+        <div class="text-center">
+          <h5>You can control Conditions</h5>
+          <button
+            type="button"
+            id="cancel"
+            class="btn btn-secondary button more"
+          >
+            Control
+          </button>
+          <button type="submit" class="btn btn-secondary ms-5 button more">
+            Back
+          </button>
+          <br />
+          <br />
+        </div>
+      </div>
+    </form>
+  </section>
+  {%endblock content%}
+</body>

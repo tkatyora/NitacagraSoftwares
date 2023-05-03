@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+ {%block content%} 
+ {%load static%}
+  {% block title%}
+<head>
+  <meta name="Key Words" content="Mangaging the About Page">
+  <meta name="description" content="This is a platform for Markerting Team to Update and make changes on The About Pages ">
+<title>NitacagraSoftwares |Update Service</title>
+</head>
+{%endblock title%}
+<body>
+  {% load crispy_forms_tags %}
+  <br />
+  <br />
+  <br />
+   {% for info in data %} 
+  <div class=" mt-3 text-center">
+      <h5>information of AboutUs Page</h5>
+       <br />
+         <div class="mx-sm-4">
+      <p class="lead">
+        <strong>The About Page was Created on : {{info.created_on}}</strong>
+      </p>
+     
+      <p class="lead">
+        <strong>The About Page was Last Updated On : {{info.lastUpadatedOn}}</strong>
+      </p>
+      <br />
+      </div>
+    </div>
+    {%endfor%}
+  <form id="form-id" method="POST" class="shadow-lg mt-5">
+    {% csrf_token %}
+    <br />
+    <div class="message mt-3 text-center">
+      <h5>Update The About Pages</h5>
+     
+    </div>
+    {% for message in messages %} {% if message.tags == 'warning'%}
+    <div class="start-center container">
+        <p class="bg-warning">{{message}}</p>
+    </div>
+  {%endif%} {%endfor%}
+    <br />
+    <div class="mx-sm-4">
+      <p class="lead">
+        <strong>{{form.history|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.coreValues|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.visionMision|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.takudzwa|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.gracious|as_crispy_field}}</strong>
+      </p>
+      <br /> 
+      <p class="lead">
+        <strong>{{form.nicole|as_crispy_field}}</strong>
+      </p>
+      <br />
+   
+      <p class="lead"><strong>{{form.carey|as_crispy_field}}</strong>
+      </p>
+      <br /> 
+      </div>
+  </br>
+    <div class="text-center mb-5">
+      <button
+          type="button"
+          id="back"
+          class="btn btn-secondary home more button"
+        >
+          <a href="{% url 'dashboard'%}">Cancel</a>
+        </button>
+        <button type="submit" class="btn btn-secondary ms-5 button more">
+          Save
+        </button>
+    </div>
+  </br>
+  </form>
+
+  <script src="{% static '../static/JS/view.js'%}"></script>
+</body>
+{%endblock content%}
+
+

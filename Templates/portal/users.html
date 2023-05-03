@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+ {% block content%} 
+ {% load static%}
+{% block title%}
+<head>
+<title>NitacagraSoftwares |AllUsers</title>
+</head>
+{%endblock title%}
+</br>
+</br>
+</br>
+</br>
+ <section class=" service-hero text-start ">
+      <div class="container">
+         <div class="error-class">
+           <p class="lead">Users</p> 
+         </div>
+          <div class="row g-5">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>            
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">email</th>
+                    <th scope="col">City</th>
+                    <th scope="col">PhoneNumber</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">gender</th>
+                    <th scope="col">Roles</th>
+                    <th scope="col">LogInRole</th>
+                    
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+              {% for user in AllUsers %}
+                <tbody>
+                    <tr>
+                        <th scope="row">{{user.personalInfo}}</th>
+                        <td>{{user.personalInfo}}</td>
+                        <td>{{user.personalInfo.last_name}}</td>
+                        <td>{{user.personalInfo.username}}</td>
+                        <td>{{user.personalInfo.email}}</td>
+                        <td>{{user.city}}</td>
+                        <td>{{user.phoneNumber}}</td>
+                        <td>{{user.address}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.nitacagraName}}</td>
+                        <td>{{user.logInRole}}</td>
+                    </tr>
+                </tbody>
+             {%endfor %}
+            </table>
+        </div>
+      </div>
+
+   {% comment %}
+   
+        
+     
+
+    </div>
+    </div> {% endcomment %}
+</section>
+
+{%endblock content%}

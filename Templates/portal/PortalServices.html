@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>NITACAGRA | AllServices</title></head> {%endblock title%}
+  <body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="start-center container">
+    {% for message in messages %} {% if message.tags == 'success'%}
+    <div class="error-class">
+      <p class="bg-success">{{message}}</p>
+    </div>
+    {%endif%} {%endfor%}
+  </div>
+  <div class="list-section  container">
+    <div class="row  g-5">
+            <div class="col-3">
+              <div class="p-4 border  shadow bg-light">
+                <div class="txt">
+
+                  <a href="#">Web Development</a>  
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+                <a href="#">Networking </a>
+               </div>
+             </div>
+          </div>
+        <div class="col-3">
+          <div class="p-4 border  shadow bg-light">
+            <div class="txt">
+              
+              <a href="#">Mobile Development</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-4 border  shadow bg-light">
+          <div class="txt">
+            
+            <a class="txt-section" href="#">Desktop Development</a>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+<br>
+<br>
+ <section class="search-section">
+  <div class="container">
+    <h1 class="p-4 text-start">All Services</h1>
+    <h3>Web services</h3>
+    {% for service in PortalServices %}
+    {%if service.section == 'web'%}
+    <div class="row g-5">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ServiceName</th>
+            <th scope="col">Old Price</th>
+            <th scope="col">New Price</th>
+            <th scope="col">Brief Discription</th>
+            <th scope="col">Full Discription</th>
+            <th scope="col">Special Offer</th>
+            <th scope="col">Created_on</th>
+            <th scope="col">Updated on</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{service.id}}</td>
+            <td>{{service.name}}</td>
+            <td>{{service.oldPrice}}</td>
+            <td>{{service.newPrice}}</td>
+            <td>{{service.briefDisc}}</td>
+            <td>{{service.FullDisc}}</td>
+            <td>{{service.specialOffer}}</td>
+            <td>{{service.created_on}}</td>
+            <td>{{service.updated_on}}</td>
+            <td>
+              <div class='text-center'>
+                <button type="button" class="btn btn-danger  ms-5  more">
+                  <a class="nav-link .navs-link" href="{% url 'deleteservice' service.id%}">Delete</a>
+                </button>
+                <button type="button" class="btn btn-secondary ms-5 button more">
+                  <a class="nav-link .navs-link" href="{% url 'updateservice' service.id%}">Update</a>
+                </button>
+               </div>
+            </td>
+          </tr>
+        </tbody>
+{%endif%}
+{%endfor %}
+<h1>Desktop</h1>
+    {% for service in PortalServices %}
+    {%if service.section == 'desktop'%}
+    <div class="row g-5">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ServiceName</th>
+            <th scope="col">Old Price</th>
+            <th scope="col">New Price</th>
+            <th scope="col">Brief Discription</th>
+            <th scope="col">Full Discription</th>
+            <th scope="col">Special Offer</th>
+            <th scope="col">Created_on</th>
+            <th scope="col">Updated on</th>
+            
+            <th scope="col"></th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr>
+            <th scope="row">{{service.id}}</th>
+            <td>{{service.name}}</td>
+            <td>{{service.oldPrice}}</td>
+            <td>{{service.newPrice}}</td>
+            <td>{{service.briefDisc}}</td>
+            <td>{{service.FullDisc}}</td>
+            <td>{{service.specialOffer}}</td>
+            <td>{{service.created_on}}</td>
+            <td>{{service.updated_on}}</td>
+            <td>
+              <div class='text-center'>
+              <a class="nav-link .navs-link" href="{% url "addservices"%}">Add New Service</a>
+              <a class="nav-link .navs-link" href="{% url "addservices"%}">Add New Service</a>
+              <button type="button" class="btn btn-secondary ms-5 button more">
+                Update
+              </button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+           {%endif%}
+          {%endfor %}
+     
+           <!-- creating the sections of the projects trials that are clickable -->
+
+                 
+      </section>
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

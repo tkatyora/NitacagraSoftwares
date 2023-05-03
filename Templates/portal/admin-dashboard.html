@@ -1,0 +1,299 @@
+{% extends 'base.html' %}
+ {% block content%} 
+ {% load static%}
+   {% block title%}
+<head>
+  <meta name="Key Words" content="Nitacagra Softwars Admin Dashboard">
+  <meta name="description" content="This is a platform for NitacagraSoftwares Admins , markerting team, and Accounts team to add and chage something om the website">
+<title>NitacagraSoftwares |Admin Dashboard</title>
+</head>
+{%endblock title%}
+
+<br />
+<br />
+ <section class="text-start my-5 mx-sm-5">
+   {% comment %} <span class="">
+        <button class="back mb-3">
+            <a href=""> Back </a>  
+          
+        </button>
+         
+      </span> {% endcomment %}
+    <div class="start-center container">
+      {% for message in messages %} {% if message.tags == 'success'%}
+      <div class="error-class">
+        <p class="bg-success lead">{{message}}</p>
+        {%endif%} {%endfor%}
+    </div>
+     <div class ='text-end logout-main'>
+      <p class= 'lead'>
+        <a href="" class=" nav-link lead a-tags">Signed in as {{user.username}}</a>
+        <a class="nav-link  a-tags  lead " href="{% url "logout" %}"> LogOut</a>
+    </div>
+    <p/>
+       
+        
+        <div class="  row g-5">
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div class="header-blue ">
+                <h3>Welcome
+                </br>
+                    {{user.first_name}} {{user.last_name}}</h3>
+              </div>
+             <hr>
+                <div class="a-tags my-link">
+                <a class ='nav-link .navs-link' href="{% url 'profile'%}">My Profile</a>
+                <a href="#">Account Settings</a> 
+                {% comment %} 
+                <a href="#">Change Password</a> {% endcomment %}
+              </div>
+            </div>
+          </div>
+                 <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >Services Pannel</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a class="nav-link .navs-link" href="{% url "addservices"%}">Add New Service</a>
+                <a class="nav-link .navs-link" href="{% url "PortalServices"%}">View Service</a>
+                <a href="#">Service Statistics</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+               <div class="header-grey ">
+                <h3>Projects</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="{%url 'mainMVdashboard'%}"> MurimiWangu</a>
+                <a href="{%url 'conditions'%}">Women In Markert</a>
+                <a href="{%url 'secondMVdashboard'%}">FowlRun</a>
+                {% comment %} <a href="{%url 'secondMVdashboard'%}">My Animals</a> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div class="header-grey ">
+                <h3 >Customers</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="#">View All Customers</a>
+                <a href="#">Customer Statistics</a>
+                <a href="#">Delete Customers</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >Orders</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="#">View All Order</a>
+                <a href="#">Order History</a>
+                <a href="#">Order Statistics</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >Nitacagra</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <a href="{% url 'viewUsers'%}">View All Users</a>
+                <a href="#">Assign Roles</a>
+                <a href="#">Create Roles</a>
+              </div>
+            </div>
+          </div>
+   
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+             <div class="header-grey ">
+                <h3 >Advertsiment on Web Pages</h3>
+              </div>
+              <hr>
+              <div class="a-tags my-link">
+                <h5 >About Us Page</h5>
+                <a href="{% url 'createHome'%}">Home Page</a>
+                <hr>
+                <h5 >About Us Page</h5>
+                
+                <a href="{% url 'createAbout'%}"> CreateAbout Page</a>
+                {%for info in data%}
+                 <a href="{% url 'updateAbout' info.id %}"> Update About Page</a>
+                 
+                 {%endfor%}
+                 <hr>
+                <a href="#">Our Services</a>
+              </div>
+            </div>
+          </div>
+   
+        </div>    
+      </section>
+     
+{% comment %}
+<div class="container">
+  <h3 class="p-4 text-start">Customers</h3>
+  <div class="row g-5">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">customerId</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">UserName</th>
+          <th scope="col">Paasword</th>
+          <th scope="col">Location</th>
+          <th scope="col">Date Joined</th>
+          <th scope="col">PhoneNumber</th>
+          <th scope="col">Email</th>
+          <th scope="col">Order</th>
+          <th scope="col">Last LogIn</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for data in accountCustomer %}
+        <tr>
+          <th scope="row">{{data.id}}</th>
+          <td>{{data.user.first_name}}</td>
+          <td>{{data.user.last_name}}</td>
+          <td>{{data.user.username}}</td>
+          <td>{{data.user.password}}</td>
+          <td>{{data.location}}</td>
+          <td>{{data.user.date_joined}}</td>
+          <td>{{data.phoneNumber}}</td>
+          <td>{{data.user.email}}</td>
+          <td>{{data.location}}</td>
+          <td>{{data.user.last_login}}</td>
+          <td>
+            <button type="button" class="btn btn-secondary ms-5 button more">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        {%endfor %}
+
+        <div class="container">
+          <h3 class="p-4 text-start">Customers without Account</h3>
+          <div class="row g-5">
+            {% for data in customer %}
+            <div class="col-4 text-center">
+              <div class="p-4 border shadow bg-light">
+                <div class="txt">
+                  <p>FullName : {{data.FullName}}</p>
+                  <p>Email : {{data.Email}}</p>
+                  <p>PhoneNumber : {{data.PhoneNumber}}</p>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+            {%endfor %}
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <div class="container">
+          <h3 class="p-4 text-start">Customers</h3>
+          <div class="row g-5">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">customerId</th>
+                  <th scope="col">FirstName</th>
+                  <th scope="col">LastName</th>
+                  <th scope="col">UserName</th>
+                  <th scope="col">Paasword</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Date Joined</th>
+                  <th scope="col">PhoneNumber</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Order</th>
+                  <th scope="col">Last LogIn</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for data in accountCustomer %}
+                <tr>
+                  <th scope="row">{{data.id}}</th>
+                  <td>{{data.user.first_name}}</td>
+                  <td>{{data.user.last_name}}</td>
+                  <td>{{data.user.username}}</td>
+                  <td>{{data.user.password}}</td>
+                  <td>{{data.location}}</td>
+                  <td>{{data.user.date_joined}}</td>
+                  <td>{{data.phoneNumber}}</td>
+                  <td>{{data.user.email}}</td>
+                  <td>{{data.location}}</td>
+                  <td>{{data.user.last_login}}</td>
+                  <td>
+                    <button
+                      type="button"
+                      class="btn btn-secondary ms-5 button more"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+
+                {%endfor %}
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <div class="container">
+            <h3 class="p-4 text-start">Orders</h3>
+            <div class="row g-5">
+              {% for info in order %}
+              <div class="col-4 text-center">
+                <div class="p-4 border shadow bg-light">
+                  <div class="txt">
+                    <p>Order Number : {{info.orderNumber}}</p>
+                    <p>Section : {{info.servicesTable}}</p>
+                    <p>Service : {{info.serviceTable.name}}</p>
+                    <p>Price : {{info.serviceTable.newPrice}}</p>
+                    <p>Price : {{info.serviceTable.FullDisc}}</p>
+                    <p>Dilevred Date : {{info.ReceiveDate}}</p>
+                    <p>Submission Date : {{info.SubmitDate}}</p>
+                    <p>FullName : {{info.customer.FullName}}</p>
+                    <p>Email : {{info.customer.Email}}</p>
+                    <p>PhoneNumber : {{info.customer.PhoneNumber}}</p>
+
+                    <br />
+                  </div>
+                </div>
+              </div>
+              {%endfor %} {%endblock content%}
+            </div>
+          </div>
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endcomment %} {% endblock content%}

@@ -1,0 +1,178 @@
+{% extends 'main.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>Chirembavanku | Tips </title></head> {%endblock title%}
+    <body>   
+      <br/>
+      <br/>
+      <br/>
+  </div>
+  <div class="list-section  container">
+    {%if user.is_authenticated%}
+    <button class="btn btn-secondary ms-2 w-10 " type="button">
+      <a href= "{% url 'dashboard' %}">Back To Main Dashboard  </a> 
+      </button> 
+      <br/>  <br/> 
+      {%endif%}
+    <h3 id ="greeting" class="mb-3">Select The Category of the Tip</h3>
+    <br>
+    <!-- creating the sections of the projects trials that are clickable -->
+    <div class="row  g-5">
+            <div class="col-3">
+              <div class="p-4 border  shadow bg-light">
+                <div class="txt">
+
+                  <a href="#">Diseases</a>  
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+                <a href="#">Nutritions </a>
+               </div>
+             </div>
+          </div>
+        <div class="col-3">
+          <div class="p-4 border  shadow bg-light">
+            <div class="txt">
+              
+              <a href="#">Physicion</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-4 border  shadow bg-light">
+          <div class="txt">
+            
+            <a class="txt-section" href="#">Atheletition</a>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+<br>
+<br>
+ <section class="search-section">
+           <!-- creating the sections of the projects trials that are clickable -->
+          <div class="container">
+              <h3 class=" p-4 text-start">Disease</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+               {% for data in tips %}
+               {% comment %} {%if data.category == 'dis'%} {% endcomment %}
+                <div class="col-4">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      
+                      <p>
+                        <h4>Tip for  {{data.Disease.name}} </h4>
+                        <br>
+                        {{data.Tip}}
+                      </p>
+                      <br>
+                      
+                      
+                      <h6>Written by: Dr {{data.Creater}}</h6>
+                    
+                      <br />
+                      {% comment %} displays if a patient is viwing {% endcomment %}
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'detail' %}"> More About {{data.Disease.name}} </a>
+                          </button>  
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                {% comment %} {%endif%} {% endcomment %}
+                {%endfor %}
+             
+            </div>
+            
+        </div>
+        <br> <br>
+           <!-- creating the sections of the projects trials that are clickable -->
+          <div class="container">
+              <h3 class=" p-4 text-start"></h3>
+              <div class="row  g-5">
+<!-- add django code -->
+               {% for data in tips %}
+               {%if data.category == 'phy'%}
+                <div class="col-4">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      
+                      <p>
+                        <h4>Tip for  {{data.Disease.name}} </h4>
+                        <br>
+                        {{data.Tip}}
+                      </p>
+                      <br>
+                      
+                      
+                      <h6>Written by: Dr {{data.Creater}}</h6>
+                    
+                      <br />
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'detail' %}"> More About {{data.Disease.name}} </a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                {%endif%}
+                {%endfor %}
+             
+            </div>
+            
+        </div>
+        <br> <br>
+           <!-- creating the sections of the projects trials that are clickable -->
+          <div class="container">
+              <h3 class=" p-4 text-start">Nutritions</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+               {% for data in tips %}
+               {%if data.category == 'nutr'%}
+                <div class="col-4">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      
+                      <p>
+                        <h4>Tip for  {{data.Disease.name}} </h4>
+                        <br>
+                        {{data.Tip}}
+                      </p>
+                      <br>
+                      
+                      
+                      <h6>Written by: Dr {{data.Creater}}</h6>
+                    
+                      <br />
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'detail' %}"> More About {{data.Disease.name}} </a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                {%endif%}
+                {%endfor %}
+             
+            </div>
+            
+        </div>
+        <br> <br>
+
+                 
+      </section>
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

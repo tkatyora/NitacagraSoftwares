@@ -1,0 +1,197 @@
+@use "../customize" as *;
+
+
+// home hero
+body{
+    background-color: $gray-200 !important;
+}
+.hero-index{
+    margin-top: 5%;
+    .caption{
+            position: absolute;
+            right: 15%;
+            bottom: 1.25rem;
+            left: 15%;
+            top: 35%;
+            color: #fff;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bolder;
+            
+            
+    }
+    .slide2{
+        
+        top: 50%;
+        color: $blue !important;
+        font-weight: bolder;
+        font-size: 2rem;
+        font-family: cursive;
+    }
+}
+//home services
+.services{
+  
+    margin-top: 3% ;
+    .txt{
+        h2 {
+            color: $red !important;
+        }
+        p{
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    
+    }
+    .col-4{
+        .txt{
+            height:20%;
+            width: 90%;  
+        }
+       
+        img{
+            
+               
+                padding-left:1px;
+                padding-right: 1px;
+        }
+    }
+    
+    
+} 
+//services hero
+.service-hero{
+  .banner{
+   margin: 0;
+  
+  }  
+}
+// regester page
+.regester-hero{
+    position: relative;
+    .message{
+        font-family: cursive; 
+        position: relative;
+       
+       h6{
+        color: $red;
+        
+       }
+    }
+}
+
+// the hero of about page
+.hero-about{
+   
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    .history{
+        
+        margin-top: 40px;
+    }
+    h4{
+        color: $blue !important;
+    }
+    h5{
+        margin-top: 30px;
+        color: $blue !important;
+    }
+    
+    }
+
+    // blog hero
+    .blog-hero{
+        background-color: $gray-200 !important;
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%; 
+        .header{
+            color: $blue;
+        }
+    }
+
+
+    //trial projects
+    .products-hero{
+    
+        margin: 2%;
+        .caption{
+            position: absolute;
+            right: 15%;
+            bottom: 1.25rem;
+            left: 15%;
+            top: 35%;
+            color: #fff;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bolder;
+            
+            
+    }
+    .slide2{
+        
+        top: 50%;
+        color: $blue !important;
+        font-weight: bolder;
+        font-size: 2rem;
+        font-family: cursive;
+    }
+    
+    .trial-projects{
+     margin-top: 6%;
+    }
+    .trial{
+        margin-top: 3%;
+       }
+    }
+.service-hero{
+}
+
+// common sections
+#greeting{
+    color: $blue !important;
+    
+  }
+  #greeting:hover{
+      color: $green !important;
+      font-family: cursive;
+      font-weight: bolder;
+      cursor: pointer;
+  }
+
+
+// for the list section
+.list-section{
+    .col-3{
+        .txt{
+            a
+            {
+             color: $secondary !important ;
+             text-decoration: none;
+             font-size: 1.2em; 
+            
+            }
+        }
+       
+        img{
+                width: 15%;
+                height:15%;
+        }
+    }
+}
+.price{
+    font-weight: bolder;
+   
+}
+.specialOffer{
+    background-color: $red !important;
+    width: 160px;
+    border-radius: 5px;
+    font-size: 1em;
+    position: absolute;
+    margin-top: 20px;
+    font-style: italic;
+    margin-left: 7%;
+    
+}

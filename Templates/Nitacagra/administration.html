@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {%load static%} {% block content %}
+<section class="admin-hero">
+  <div class="container-form">
+    <div class="img shadow-lg">
+      <img
+        src="{% static '../static/admin/imagies/pic4.jpg'%}"
+        class="img-fluid"
+        alt=""
+      />
+      <img
+        src="{% static '../static/admin/imagies/pic3.jpg' %}"
+        class="img-fluid img02"
+        alt=""
+      />
+    </div>
+    <form id="form-id" class="shadow-lg" name="form" method = 'POST'  action ='' >
+      {% csrf_token %}
+      <div class="mb-3 form">
+        <h5 class="login text-center">Welcome!</h5>
+        <div class="error-class">
+          <p class="error">Wrong Username and Password</p>
+          <p class="error">Wrong password</p>
+          <p class="error">Wrong Username</p>
+        </div>
+
+        <label for="exampleInputEmail1" class="form-label user"
+          >Enter UserName</label
+        >
+        <input
+          type="text"
+          name="username"
+          class="form-control input"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          required
+          spellcheck="true"
+        />
+      </div>
+      <div class="mb-3 form">
+        <label for="exampleInputPassword1" class="form-label"> Enter Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control input"
+          id="exampleInputPassword1"
+          required
+          autocomplete="additional-name"
+        />
+        <span id="show">show</span>
+      </div>
+      <div class="mb-3 form-check form">
+        <input type="radio" class="form-check-input input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1"
+          >Remember me next time</label
+        >
+        <div class="new-account">
+          <a href="{% url "regester" %}">Create New Account</a>
+        </div>
+      </div>
+      <div class="text-center">
+
+        <button type="submit" class="btn mb-4 btn-secondary button">
+          Log In
+        </button>
+        <button type="submit"> Sign In </button>
+      </div>
+    </form>
+  </div>
+  <script src="{% static '../static/JS/admin.js'%}"></script>
+</section>
+{% endblock content %}

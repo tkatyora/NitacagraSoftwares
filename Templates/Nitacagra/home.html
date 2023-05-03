@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content%}
+{% load static%}
+{% block title%}
+<head>
+  <meta name="Key Words" content="Nitacagra Software Home Page">
+  <meta name="description" content="This is home of NitacagraSoftwares services,projects Guides as well as Products">
+<title>NitacagraSoftwares | Home of Software Solutions</title>
+</head>
+  {%endblock title%}
+
+    <main class="hero-index">
+  <section class="carousel">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+       <section id="modals" class="modals ">
+      <div  class="modal modal-alert position-static d-block  py-5" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-0"> Search Functinality under Development</h5>
+        <hr>
+        <p class="mb-0">Thanks For Choosing Nitacagra Softwares. This functinality will be available soon</p>
+      </div>
+      <div class=" mb-3 text-center ">
+        <button id="closebtn" type="button" class="btn btn-color btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end btn-info"><strong>Close</strong></button>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    {%for data in advert%}
+    {% if data.section == 'part1'%}
+      <div class="carousel-item active" data-bs-interval="8000">
+        <img src="{{data.image.url}}"  class=" img-fluid d-block w-100" alt="For Projects Guides" /> 
+        <div class="container">
+          <div class="carousel-caption text-start">
+             <h1>{{data.name}}</h1>
+            <p> <strong>N{{data.disc}}</strong> </p>
+            {%if data.Homebuton == 'signUp'%}
+            <p><a class="btn btn-lg btn-info" href="{% url 'sign_up'%}">Sign Up Today</a></p>
+            {%elif data.Homebuton == 'contact'%}
+             <p><a class="btn btn-lg btn-success" href="{% url 'sign_up'%}">Contact Today</a></p>
+             {%elif data.Homebuton == 'learn'%}
+            <p><a class="btn btn-lg btn-color" href="{% url 'services'%}">Learn More</a></p>
+            {%endif%}
+          </div>
+        </div>
+      </div>   
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>  
+    </section>
+   
+    <section class="product-services">
+        <div class="container text-start   services">
+        <h1 class=" p-4 text-center">Products And Services <hr></h1>
+      
+        <div class="row  g-5">
+          {%elif data.section == 'part2'%} 
+          {% comment %} <--where part 2 is products and services--> {% endcomment %}
+          <div class="col-4">
+          <img src=" {{data.image.url}}" class="pic img-fluid" alt="">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+               <h4 class="header">{{data.name}}</h4>
+                <hr>
+                <p>
+                 {{data.disc}}
+                </p>
+               
+                <br />
+                 {% if data.Homebuton == 'servicebtn'%}
+                 <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More Services </a></button>
+                  {%elif data.Homebuton == 'Guidesbtn'%}
+                  <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'projectsGuides'%}"> More Guides </a></button>
+                  {%elif data.Homebuton == 'productsbtn'%}
+                  <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'products'%}"> More Products </a></button>
+                  {%endif%}
+        
+             </div>
+            </div>
+          </div>
+          {% endif%}
+          {%endfor%}
+      </div>
+    </section>
+     <script src="{% static '../static/JS/index.js'%}"></script>
+ </main>
+  {%endblock content%}

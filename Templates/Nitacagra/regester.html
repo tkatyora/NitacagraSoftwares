@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style/css/style.css" />
+    <title>Regester</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm navbar-light shadow p-3 mb-2 bg-body rounded fixed-top menu"
+    >
+      <div class="container-fluid">
+        <a href="../html.pages/index.html" class="navbar-brand logo-title">
+          TnC <span class="sub-logo">Telecommunication</span></a
+        >
+        </div>
+    </nav>
+    <section class="regester-hero">
+      <form id="form-id" class="shadow-lg" name="form" method="post" >
+        <br>
+        <div class="message mt-3 mb-2 text-center">
+        <h3>Create new account</h3>
+         <h6>For Administration Only</h6> 
+        </div>
+        
+        <div class=" form">
+          <label for="first-name" class="form-label user">Enter First Name</label
+          >
+          <input
+            type="text"
+            name="first-name"
+            class="form-control input"
+            id="first-name"
+            aria-describedby="emailHelp"
+            required
+            spellcheck="true"
+          />
+        </div>
+        <div class="form">
+          <label for="first-name" class="form-label user">Enter Surname</label
+          >
+          <input
+            type="text"
+            name="first-name"
+            class="form-control input"
+            id="first-name"
+            aria-describedby="emailHelp"
+          required
+            spellcheck="true"
+          />
+        </div>
+        <div class=" mb-4 form">
+          <label for="first-name" class="form-label user">Create Username</label
+          >
+          <input
+            type="text"
+            name="first-name"
+            class="form-control input"
+            id="first-name"
+            aria-describedby="emailHelp"
+            required
+            spellcheck="true"
+          />
+        </div>
+    </div>
+    <div class=" text-center">
+        <button type="submit" class="btn mt-3 btn-secondary button mb-4">
+            Next
+          </button>   
+    </div>
+    
+  </form>
+  <form id="form-id-2" class="shadow-lg form2" name="form2" method="post" >
+        
+        <div class="mb-2 form">
+            <div class="error-class">
+                <p class="error" id="error">Password Do Not Match</p>
+              </div>
+          <label for="email" class="form-label email"
+            >Enter Email</label
+          >
+          <input
+            type="email"
+            name="email"
+            class="form-control input"
+            id="email"
+            required
+            autocomplete="additional-name"
+          />
+
+        </div>
+        <div class="mb-2 form">
+          <label for="password" class="form-label"
+            >Create Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            class="form-control input confirm"
+            id="Password"
+            required
+           
+          />
+          <span id="show" class="show" >show</span>
+        </div>
+        <div class="mb-2 form">
+          <label for="confirmPassword" class="form-label"
+            > Confrim Password</label
+          >
+          <input
+            type="password"
+            name="confirmPassword"
+            class="form-control input confirm"
+            id="confirm-password"
+            required
+            
+            
+          />
+          <span id="show" class="show">show</span>
+        </div>
+        <div class="mb-2 form">
+          <label for="companyCode" class="form-label"
+            >Enter Company Code</label
+          >
+          <input
+            type="text"
+            name="companyCode"
+            class="form-control input"
+            id="companyCode"
+            required
+            
+          />
+        </div>
+        <div class="gender">
+            <div class="mb-3 form-check form">
+                <input
+                  type="radio"
+                  class="form-check-input input"
+                  id="female"
+                />
+                <label class="form-check-label" for="female"
+                  >Female</label
+                >
+               
+                
+              </div>
+              <div class="mb-3 form-check form">
+                <input
+                  type="radio"
+                  class="form-check-input input"
+                  id="male"
+                />
+                
+                <label class="form-check-label" for="male"
+                  >Male</label
+                >
+                
+              </div>
+        </div>
+       
+        
+        <div class=" mb-3  text-center">
+          <button type="button" id="previous" class="btn btn-secondary button more">
+              Submit
+            </button>
+            <button type="submit" class="btn btn-secondary button ms-5 more">
+              Log In
+            </button>
+      </div>
+      
+        
+      </form>
+        
+        
+    </section>
+    <script src="../JS/regester.js"></script>
+  </body>
+</html>

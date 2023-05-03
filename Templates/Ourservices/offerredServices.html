@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>NitacagraSoftwares | OfferedServices</title></head> {%endblock title%}
+    <body>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+       <h1 class="header-blue text-center">THIS PAGE IS UNDER DEVELOPMENT</h1>
+      <!-- i have added the product-hero class because it have the fetaures we like to use in the 
+      services but im going to add service-hero class so that i can customize -->
+       {% comment %} <section class=" service-hero text-start ">
+        <br>
+        <div class="products-hero banner">
+          <div
+          id="carouselExampleDark"
+          class="carousel carousel-dark slide"
+          data-bs-ride="carousel" >
+        </div>
+        <div class="carousel-inner">
+          {% for data in service%}
+            <div class="carousel-item active" data-bs-interval="9000">
+              <img src=" {% static '../static/admin/imagies/calculator.jfif'%}"  class="d-block w-100" alt="..." />
+              <div class="caption d-none d-md-block">
+                <h1 class="display-1">{{data.name}}</h1>
+                <p  >
+                 {{data.briefDisc}}
+                </p>
+                <button type="button" class="btn btn-secondary try-it-now buy "> <a href= "buyservice"> Buy</a></button>
+              </div>
+            </div>
+            {%endfor%}
+        </div>  
+      </div>
+  <br>
+  <br>
+     
+  </div> {% endcomment %}
+  {% comment %} <div class="list-section  container">
+    <h3 id ="greeting" class="mb-3">Select The Service of your choice</h3>
+    <br>
+    <!-- creating the sections of the projects trials that are clickable -->
+    <div class="row  g-5">
+            <div class="col-3">
+              <div class="p-4 border  shadow bg-light">
+                <div class="txt">
+
+                  <a href="#">Web Development</a>  
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+                <a href="#">Networking </a>
+               </div>
+             </div>
+          </div>
+        <div class="col-3">
+          <div class="p-4 border  shadow bg-light">
+            <div class="txt">
+              
+              <a href="#">Mobile Development</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-4 border  shadow bg-light">
+          <div class="txt">
+            
+            <a class="txt-section" href="#">Desktop Development</a>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+<br>
+<br> {% endcomment %}
+ {% comment %} <section class="search-section"> {% endcomment %}
+           <!-- creating the sections of the projects trials that are clickable -->
+          <div class="container">
+              <h3 class=" p-4 text-start">Web App Development</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+               {% comment %} {% for data in service %}
+               {%if data.section == 'web'%}
+                <div class="col-4">
+                  {% if data.specialOffer%}
+                  <span class="specialOffer  ">
+                    <h4  class="text-center">Special Offer</h4>
+                  </span>
+                  
+                  {%endif %}
+                  <img src="{% static '../static/admin/imagies/PRODUCTS.png'%}" class="img-fluid" alt="">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      <h2>{{data.name}}</h2>
+                      <p>
+                        {{data.briefDisc}}
+                      </p>
+
+                    
+                      <br />
+                      <div class="  text-start">
+                         <button type="button" class="btn btn-secondary home more1 button buy"><a href= "buyservice"> Buy</a></button>
+
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'moreinformation' data.id%}"> View</a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                {% comment %} {%endif%}
+                {%endfor %} {% endcomment %}
+             
+            {% comment %} </div>
+            
+        </div>
+        <br> <br> {% endcomment %} 
+          {% comment %} <div class="container"> {% endcomment %}
+              <h3 class=" p-4 text-start">Desktop Development</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+                {% comment %} {% for data in service %}
+                {% if data.section == 'desktop'%}  
+                <div class="col-4">
+                  {% if data.specialOffer%}
+                  <span class="specialOffer  ">
+                    <h4  class="text-center">Special Offer</h4>
+                  </span>
+                  
+                  {%endif %}
+                  <img src="{% static '../static/admin/imagies/PRODUCTS.png'%}"class="img-fluid" alt="">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      <h2>{{data.name}}</h2>
+                      <p>
+                        {{data.briefDisc}}
+                      </p>
+
+                    
+                      <br />
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary home more1 button buy"><a href= "buyservice"> Buy</a></button>
+
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'moreinformation' data.id%}"> View</a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+                {%endif%}  
+                {%endfor %}
+            
+                
+          <div class="container"> {% endcomment %}
+              <h3 class=" p-4 text-start">Mobile Development</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+{% comment %} {% for data in service %} {% endcomment %}
+                {% comment %} {% if data.section == 'mobile'%}  
+                <div class="col-4">
+                  {% if data.specialOffer%}
+                  <span class="specialOffer  ">
+                    <h4  class="text-center">Special Offer</h4>
+                  </span>
+                  
+                  {%endif %}
+                  <img src="{% static '../static/admin/imagies/PRODUCTS.png'%}"class="img-fluid" alt="">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      <h2>{{data.name}}</h2>
+                      <p>
+                        {{data.briefDisc}} {% endcomment %}
+                      {% comment %} </p>
+
+                    
+                      <br />
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary home more1 button buy"><a href= "buyservice"> Buy</a></button>
+
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'moreinformation' data.id%}"> View</a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div> {% endcomment %}
+                  {% comment %} </div>
+                </div>  
+                {%endif%}  
+                {%endfor %}
+                   
+
+          <div class="container">
+              <h3 class=" p-4 text-start">Networking</h3>
+              <div class="row  g-5"> {% endcomment %}
+<!-- add django code -->
+{% comment %} {% for data in service %} {% endcomment %}
+                {% comment %} {% if data.section == 'network'%}  
+                <div class="col-4">
+                  {% if data.specialOffer%}
+                  <span class="specialOffer  ">
+                    <h4  class="text-center">Special Offer</h4>
+                  </span>
+                  
+                  {%endif %}
+                  <img src="{% static '../static/admin/imagies/PRODUCTS.png'%}"class="img-fluid" alt="">
+                  <div class="p-4 border shadow bg-light">
+                    <div class="txt">
+                      <h2>{{data.name}}</h2>
+                      <p>
+                        {{data.briefDisc}}
+                      </p>
+
+                    
+                      <br />
+                      <div class="  text-start">
+                          <button type="button" class="btn btn-secondary home more1 button buy"><a href= "buyservice"> Buy</a></button>
+
+                          <button type="button" class="btn btn-secondary ms-2 button more1 buy home view">
+                            <a href= "{% url 'moreinformation' data.id%}"> View</a>
+                          </button>
+                          <br>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+                {%endif%}  
+                {%endfor %}
+                   
+
+                 
+      </section> {% endcomment %}
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

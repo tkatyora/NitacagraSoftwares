@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {%block content%} {%load static%}
+<body>
+  <br />
+  <br />
+  <br />
+  <form id="form-id" method="POST" class="shadow-lg mt-5">
+    {%csrf_token%}
+    <br />
+    <div class="message mt-3 text-start mx-sm-5">
+      <h5>Are you sure you want to delete this service</h5>
+      <p>Name : {{service_to_delete.name}}</p>
+      <p>Full Discription :{{service_to_delete.FullDisc}}</p>
+      <p>Price : {{service_to_delete.oldPrice}}</p>
+      <p>Special Offer :{{service_to_delete.specialOffer}}</p>
+    </div>
+    <div class="text-center">
+      <button
+        type="button"
+        id="back"
+        class="btn btn-secondary home more button"
+      >
+        <a href="{% url 'PortalServices'%}"> No </a>
+      </button>
+      <button type="submit" class="btn btn-danger ms-5 more">Yes</button>
+    </div>
+    <br />
+  </form>
+
+  <script src="{% static '../static/JS/view.js'%}"></script>
+</body>
+{%endblock content%}

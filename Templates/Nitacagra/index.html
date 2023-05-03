@@ -1,0 +1,167 @@
+{% extends 'base.html' %} {% block content%} {% load static%} {% block title%}
+<head>
+  <meta name="Key Words" content="Nitacagra Software Home Page" />
+  <meta
+    name="description"
+    content="This is home of NitacagraSoftwares services,projects Guides as well as Products"
+  />
+  <title>NitacagraSoftwares | Home of Software Solutions</title>
+</head>
+{%endblock title%}
+<main class="hero-index dropdown-disapper">
+  <section class="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="{%static '../../static/NITACACRAIMAGES/webpage3.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="For Projects Guides"
+          />
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1 class="header-blue">Murimi Wangu.</h1>
+              <p>
+                A community for Farmers, Agronomist and Customers To Sell and
+                Buy Farming Products EveryWhere .
+              </p>
+              <p><a class="btn btn-lg btn-info" href="#">Comming Soon</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="8000">
+          <img
+            src="{% static '../../static/NITACACRAIMAGES/webpage1.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="Programmed Drone"
+          />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="header-blue">FowlRun Monitoring System.</h1>
+              <p>
+                Digitalizing Your FowlRun Making it be in your hands Wherever
+                You go monitoring an controlling Your FowlRun
+              </p>
+
+              <p><a class="btn btn-lg btn-success" href="#">comming Soon</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="9000">
+          <img
+            src="{% static '../../static/NITACACRAIMAGES/webpage2.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="The spider web representing  website"
+          />
+
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1 class="">Women In The Markert.</h1>
+              <p>
+                <strong>A platForm for Women In the Venting Sector</strong> .
+              </p>
+              <p><a class="btn btn-lg btn-color" href="#">Cooming Soon</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+<section class="product-services">
+        <div class="container text-start   services">
+        <h1 class=" p-4 text-center">Products And Services <hr></h1>
+      
+        <div class="row  g-5">
+          <div class="col-4">
+            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc1.jpg'%} " class="pic img-fluid" alt="Website Develpment">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+               <h4 header >Website Development</h4>
+               <hr>
+                <p>
+                Nicole
+                </p>
+               
+                <br />
+                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
+             </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc4.jpg'%}"  class="pic img-fluid" alt="Website Develpment">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+               <h4 class="header">Blog Writting and Hosting</h4>
+               <hr>
+                <p>
+                Nicole
+                </p>
+                <br />
+                
+                
+                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
+             </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc4.jpg'%} " class="pic img-fluid" alt="Website Develpment">
+            <div class="p-4 border  shadow bg-light">
+              <div class="txt">
+               <h4 class="header">Pic16F877A Programming</h4>
+               <hr>
+                <p>
+                Nicole
+                </p>
+               
+                <br />
+                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
+             </div>
+            </div>
+          </div>
+         
+         
+      </div>
+    </section>
+</main>
+<script src=" {% static '../../static/JS/main.js'%}"></script>
+{%endblock content%}

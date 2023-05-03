@@ -1,0 +1,44 @@
+{% include 'style.html'%}
+{%load static %}
+
+<nav
+      class="navbar navbar-expand-sm navbar-light shadow p-3 mb-5 bg-body menu   "
+    >
+      <div class="container-fluid">
+        <a href="{% url "home" %}" class="navbar-brand logo-title">
+          MURIMI <span class="sub-logo">VANGU</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse position-absolute top-0 start-50 translate-middle-x navbar-links"
+          id="navbarNavAltMarkup"
+        >
+       
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="{% url "home" %}">Conditions</a>
+             <a class="nav-link .navs-link" href="{% url "services"%}">Animals</a>
+            <a class="nav-link .navs-link " href="{% url "trialProjects" %}"
+              >Quantity</a
+            >
+            <a class="nav-link .navs-link" href="{% url "blog"%}">Control</a>
+            <a class="nav-link .navs-link" href="{% url "about" %}">About</a>
+             <button class ='button btn btn-secondary'> <a href="{% url "mainMVdashboard" %}" class="a-tags ">Back</a></button>
+          </div>
+        </div>
+       
+        </div>
+         
+       
+      </div>
+    </nav>
+    {% block content %} {% endblock content %}

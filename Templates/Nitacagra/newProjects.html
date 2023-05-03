@@ -1,0 +1,303 @@
+{% extends 'base.html' %} {% block content%} {% load static%} {% block title%}
+<head>
+  <meta name="Key Words" content="Nitacagra Softwars Comming Projets" />
+  <meta
+    name="description"
+    content="This page shows the projects that are still in Development are developed by NitacagraSoftwares "
+  />
+  <title>NitacagraSoftwares |New Projects</title>
+</head>
+{%endblock title%}
+<main class="hero-index dropdown-disapper">
+  <section class="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="{%static '../../static/NITACACRAIMAGES/murimiwangu.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="For Projects Guides"
+          />
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1 class="header-blue">Murimi Wangu.</h1>
+              <p>
+                A community for Farmers, Agronomist and Customers To Sell and
+                Buy Farming Products EveryWhere .
+              </p>
+              <p><a class="btn btn-lg btn-info" href="#">Comming Soon</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="8000">
+          <img
+            src="{% static '../../static/NITACACRAIMAGES/fowlrun.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="Programmed Drone"
+          />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="header-blue">FowlRun Monitoring System.</h1>
+              <p>
+                Digitalizing Your FowlRun Making it be in your hands Wherever
+                You go monitoring an controlling Your FowlRun
+              </p>
+
+              <p><a class="btn btn-lg btn-success" href="#">comming Soon</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="9000">
+          <img
+            src="{% static '../../static/NITACACRAIMAGES/murimi3.jpg'%}"
+            class="img-fluid d-block w-100"
+            alt="The spider web representing  website"
+          />
+
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1 class="">Women In The Markert.</h1>
+              <p>
+                <strong>A platForm for Women In the Venting Sector</strong> .
+              </p>
+              <p><a class="btn btn-lg btn-color" href="#">Cooming Soon</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section class="CommingProjects container text-start">
+    <div class="services mb-5">
+      <h1 class="p-4 text-center">
+        Upcomming Projects
+        <hr />
+      </h1>
+      <p class="lead display">
+        <strong>
+          Explore and Find more details about Nitacagra Softwares New Projects
+          that are to be deployed Soon. Enjoy!!!!
+        </strong>
+      </p>
+      <br />
+      <h3 class="mt-4">List of Projects To Comming Soon</h3>
+      <ul class="list-project">
+        <li>Project1 :Murimi Wangu</li>
+        <li>Project2 :FowRun Monitoring System</li>
+        <li>Project3 : Women In The Markert</li>
+      </ul>
+    </div>
+
+    {% comment %}
+    <div class="Project1">
+      <h2 class="header-blue mt-5">[THIS PAGE IS STILL UNDER DEVELOPMENT]</h2>
+      <div class="discrption">
+        <h4>What is Murimi Wangu?</h4>
+        <p class="lead">
+          Discription of murimi wanku Murimi Wangu is a web application that is
+          there Discription of murimi wanku Murimi Wangu is a web application
+          that is there Discription of murimi wanku Murimi Wangu is a web
+          application that is there Discription of murimi wanku Murimi Wangu is
+          a web application that is there
+        </p>
+        <button id="show-1" class="btn btn-lg btn-color">
+          Click Me To Read more
+        </button>
+      </div>
+      <div id="showmore" class="project1">
+        <div class="people">
+          <h2>Targeted People</h2>
+          <p class="lead">Farmers, Agrnomist</p>
+        </div>
+        <div class="join">
+          <h2>How To Join</h2>
+          <p class="lead">Sign In to Nitacagra Software</p>
+        </div>
+        <div class="time">
+          <h2>Status : Under Develpmenent</h2>
+          <p class="lead">
+            Expected Date To be Deployed <span>End of 2023</span>
+          </p>
+          <p class="lead">
+            Period left to Deployement Date <span> 3678 days</span>
+          </p>
+        </div>
+        <div class="sample">
+          <h2>How The Web Applications will be</h2>
+          <p class="lead">Images on the web application</p>
+        </div>
+        <div class="advantages">
+          <h2>Advantages of Using Using Murimi Wanku Web Application</h2>
+          <ul>
+            <li>Advantage 1</li>
+            <li>advantage 2</li>
+            <li>Advantage 3</li>
+          </ul>
+        </div>
+        <div class="payment">
+          <h2>Payment</h2>
+          <p class="lead">
+            It will be free for the fist 3 month in Deplyemet Date
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <h2 class="header-grey mt-5">Women In Markert</h2>
+      <hr />
+      <div class="">
+        <div class="discrption">
+          <h4>What is Murimi Wangu</h4>
+          <p class="lead">
+            Discription ofFownRun System Murimi Wangu is a web application that
+            is there
+          </p>
+        </div>
+        <div id="show-more3" class="project1">
+          <div class="people">
+            <h2>Targeted People</h2>
+            <p class="lead">Farmers, Agrnomist</p>
+          </div>
+          <div class="join">
+            <h2>How To Join</h2>
+            <p class="lead">Sign In to Nitacagra Software</p>
+          </div>
+          <div class="time">
+            <h2>Status : Under Develpmenent</h2>
+            <p class="lead">
+              Expected Date To be Deployed <span>End of 2023</span>
+            </p>
+            <p class="lead">
+              Period left to Deployement Date <span> 3678 days</span>
+            </p>
+          </div>
+          <div class="sample">
+            <h2>How The Web Applications will be</h2>
+            <p class="lead">Images on the web application</p>
+          </div>
+          <div class="advantages">
+            <h2>Advantages of Using Using Murimi Wanku Web Application</h2>
+            <ul>
+              <li>Advantage 1</li>
+              <li>advantage 2</li>
+              <li>Advantage 3</li>
+            </ul>
+          </div>
+          <div class="payment">
+            <h2>Payment</h2>
+            <p class="lead">
+              It will be free for the fist 3 month in Deplyemet Date
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <h2 class="header-grey">FowRun Monitoring System</h2>
+      <hr />
+      <div class="discrption">
+        <h4>What is Murimi Wangu</h4>
+        <p class="lead">
+          Discription ofFownRun System Murimi Wangu is a web application that is
+          there
+        </p>
+      </div>
+      <div id="show-more2" class="project1">
+        <div class="people">
+          <h2>Targeted People</h2>
+          <p class="lead">Farmers, Agrnomist</p>
+        </div>
+        <div class="join">
+          <h2>How To Join</h2>
+          <p class="lead">Sign In to Nitacagra Software</p>
+        </div>
+        <div class="time">
+          <h2>Status : Under Develpmenent</h2>
+          <p class="lead">
+            Expected Date To be Deployed <span>End of 2023</span>
+          </p>
+          <p class="lead">
+            Period left to Deployement Date <span> 3678 days</span>
+          </p>
+        </div>
+        <div class="sample">
+          <h2>How The Web Applications will be</h2>
+          <p class="lead">Images on the web application</p>
+        </div>
+        <div class="advantages">
+          <h2>Advantages of Using Using Murimi Wanku Web Application</h2>
+          <ul>
+            <li>Advantage 1</li>
+            <li>advantage 2</li>
+            <li>Advantage 3</li>
+          </ul>
+        </div>
+        <div class="payment">
+          <h2>Payment</h2>
+          <p class="lead">
+            It will be free for the fist 3 month in Deplyemet Date
+          </p>
+        </div>
+        <button id="less1" class="btn btn-lg btn-color">
+          Click Me To Show Less
+        </button>
+      </div>
+    </div>
+    {% endcomment %}
+  </section>
+  <section class="thanks mt-5 mx-sm-5 text-start">
+    <div class="mx-sm-5">
+      <h3>Thanks for choosing Nitacagra Softwares</h3>
+      <br />
+      <br />
+      <br />
+      <h1 class="header-blue text-center">THIS PAGE IS UNDER DEVELOPMENT</h1>
+      {% comment %}
+      <p class="lead">leave a Comment below</p>
+      {% endcomment %}
+    </div>
+  </section>
+</main>
+<script src="../../static/JS/main.js"></script>
+{% endblock content%}

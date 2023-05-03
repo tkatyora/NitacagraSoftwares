@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>Chirembavanku | Tips </title></head> {%endblock title%}
+    <body>   
+      <br/>
+      <br/>
+      <br/>
+  </div>
+  <div class="list-section  container">
+    <div class="list-section  container">
+      <button class="btn btn-secondary ms-2 w-10 " type="button">
+        <a href= "{% url 'dashboard' %}">Back To Main Dashboard  </a> 
+        </button> 
+        <br/>  <br/> 
+    <h3 id ="greeting" class="mb-3">Select The Disease for the Tip</h3>
+    <br>
+    <!-- creating the sections of the projects trials that are clickable -->
+    <div class="row  g-5">
+            <div class="col-3">
+              <div class="p-4 border lead shadow bg-light">
+                <div class="txt">
+
+                  <a href="#">HIV</a>  
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+            <div class="p-4 border lead shadow bg-light">
+             
+                <a href="#"> Cancer </a>
+               
+             </div>
+          </div>
+        <div class="col-3">
+          <div class="p-4 border lead shadow bg-light">
+           
+              
+              <a href="#"> Diebitis</a>
+        
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="p-4 border lead  shadow bg-light">
+          
+            <a class="txt-section " href="#">Foot Pain</a>
+      
+      </div>
+    </div>
+    </div>
+</div>
+<br>
+<br>
+ <section class="search-section">
+           <!-- creating the sections of the projects trials that are clickable -->
+          <div class="container">
+              <h3 class=" p-4 text-start">HIV</h3>
+              <div class="row  g-5">
+<!-- add django code -->
+               {% for data in tips %}
+               {%if data.Creater == user.username%}
+                <div class="col-4">
+                  <img src="{% static '../static/img/blog-1.jpg'%}"class="img-fluid" alt="">
+                  <div class="p-4 border shadow bg-light">
+                    
+                    
+                      <p class='lead'>
+                        {{data.Tip}}
+                      </p>
+                      <br>
+                
+                      <br />
+
+                      <div class="  text-start">
+                        <form method="POST">
+                       
+                          <button type="button" class="btn btn-secondary ms-2 w-30 ">
+                            <a href= "{% url 'delete_tip' data.id%}"> Delete Tip </a>
+                            </button>
+                      
+                         
+                          <button type="button" class=" btn btn-secondary ms-5 w-45">
+                            <a href="{% url 'update_tip' data.id%}"> Edit Tip </a>
+                          </button>
+                         
+                          <br>
+                          <br>
+                    
+                    </div>
+                  </div>
+                </div>    
+                {%endif%}
+                {%endfor %}
+             
+            </div>
+            
+        </div>
+      
+           <!-- creating the sections of the projects trials that are clickable -->
+
+
+                 
+      </section>
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

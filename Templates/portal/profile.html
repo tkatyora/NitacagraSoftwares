@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content%} {% load static%} {% block title%}
+<head>
+  <title>NitacagraSoftwares |UserProfile</title>
+</head>
+{%endblock title%}
+  <body>
+    <section class="regester-hero">
+        <span class="text-center  head">
+            <h1>My Profile</h1>
+        </span>
+      <div class="container  user-profile">
+        
+        <div class="personal">
+          {% comment %} {%for data in AllUsers%} {% endcomment %}
+          <h2 class="lead heading">Personal Information</h2>
+          <hr>
+          {% comment %} {%if data.city == 'kwekwe'%}    {% endcomment %}
+          <div class="info">
+            <p class="lead">Name :  <strong>{{user.first_name}}</strong> </p>
+            <p class="lead">Surname : {{user.last_name}}</p>
+            <p class="lead">Age : </p>
+            <p class="lead">Email : {{user.email}}</p>
+            <p class="lead">Addrees  : {{data.address}}</p>
+            <p class="lead">City : {{data.personalInfo.username}}</p>
+            <p class="lead">Gender :</p>
+            <p class="lead">Profile Picture :{{data.profilePicture}}</p>
+          </div>
+        </div>
+        <div class="account">
+          <h2 class="lead">Account Information</h2>
+           <hr>
+          <div class="info">
+            <p class="lead">Username : {{user.username}}</p>
+            <p class="lead">Password :</p>
+            <p class="lead">Roles : 23</p>
+            <p class="lead">PhoneNumber : {{data.phoneNumber}}</p>
+            <p class="lead">NitacagraName : {{data.nitacagraName}}</p>
+            <p class="lead">Log In Roles :{{data.logInRole}}</p>
+            <p class="lead">Last LogIn :{{user.last_login}}</p>
+            <p class="lead">Date Joined :{{user.date_joined}}</p>
+          </div>
+            {% comment %} {%endif%}  
+           {%endfor%}  {% endcomment %}
+        </div>
+         
+      </div>
+       <div class="text-center button-user">
+      <button type="button" class="btn mt-3 btn-secondary button mb-4">
+        <a class href="{% url "dashboard"%}">Edit</a>
+      </button>
+      <button type="submit" class="btn mt-3 btn-secondary  button mb-4">
+        <a class href="{% url "dashboard"%}">Back</a>
+       
+      </button>
+    </section>
+  </body>
+</html>
+
+
+ 
+
+
+ 
+
+
+{%endblock content%}

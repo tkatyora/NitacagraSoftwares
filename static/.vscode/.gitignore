@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+package.json
+client/public/index.html
+client/src/App.css
+client/src/App.js
+client/src/index.css
+client/src/index.js
+client/src/logo.svg
+client/src/reportWebVitals.js
+client/src/App.jsx

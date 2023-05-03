@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>Chirembavanku | Tips </title></head> {%endblock title%}
+    <body> 
+      <div class ='text-center'>
+      </br>
+      </br>
+      <hr/>
+        <h3 class ='lead' >Are You Sure You Want To delete Tip for  {{tip.Disease}}<h3>
+          <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary ms-2 w-30 ">Yes</button>
+            <button type="button" class="btn btn-secondary ms-2 w-30 ">
+              <a href= "{% url 'viewtips' %}">No</a>
+              </button>
+          </form>
+      </div>  
+   
+     
+                 
+      </section>
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

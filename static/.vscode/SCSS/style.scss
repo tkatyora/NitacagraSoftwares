@@ -1,0 +1,7 @@
+@use "customize";
+// importing sections
+@use "../SCSS/sections/navbar-footer";
+@use "../SCSS/sections/hero";
+// importing componets
+@use "../SCSS/componets/buttons.scss";
+@use "../SCSS/componets/forms";

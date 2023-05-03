@@ -1,0 +1,49 @@
+@use "../customize" as *;
+    // login button
+    .admin-hero{
+        
+        .home{
+            position: relative;
+             margin-top: 10px;
+             left: -80px;
+             font-size: 0.6em;
+             margin-bottom: 20px;
+        }
+
+    }
+// button at register page 
+.regester-hero{
+    
+        .more{
+            width: 100px;
+         }
+}
+.button{
+    font-size: 1.2em;
+    font-family: cursive; 
+    width: 160px;
+   
+}
+.button:hover{
+    background-color: $green !important;}
+// button at trial project
+.try-it-now{
+    background-color: $green !important;
+    font-size: .8em;
+    border-radius: 10px;
+    width: 140px;
+    a{
+        text-decoration: none;
+    }
+}  
+.home{
+    a{
+        text-decoration: none;
+    }
+}
+.more{
+    width: 100px;
+ }
+ .more1{
+    width: 130px;
+ }

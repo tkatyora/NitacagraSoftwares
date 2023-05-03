@@ -1,0 +1,157 @@
+{% include 'style.html'%}
+{%load static %}
+
+
+  <body>
+    <!-- the navbar -->
+   <header>
+      <nav
+        class="navbar navbar-expand-sm navbar-dark shadow p-3 mb-5 bg-dark rounded fixed-top menu"
+      >
+      <div class="container-fluid">
+        <a href="{% url "home" %}" class="navbar-brand logo-title">
+            NITACAGRA <span class="sub-logo">Softwares</span></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-links navbar-collapse" 
+              id="navbarCollapse">
+        {%if not user.is_authenticated%}
+            <div class="navbar-nav nav-links">
+              <hr >
+              <a class="nav-link active navs-link" aria-current="page"  href="{% url "home" %}">Home</a>     
+              <a id ='service' class="nav-link active navs-link" aria-current="page"  href="{% url "services" %}">Our Services</a>     
+                <div id="dropdown-menu" class="dropdown-service">
+                        <div class=" dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+                        <!-- <form class="p-2 mb-2 bg-dark border-bottom border-dark">
+                          <input type="search" class="form-control form-control-dark" autocomplete="false" placeholder="Type to filter...">
+                        </form> -->
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            Our Services
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../html.pages/home.html">
+                            <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                          Project Guides
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                          Products
+                          </a></li>
+                        </ul>
+                      </div>
+                    </div>   
+                  </div>
+                
+                <a id="blog" class="nav-link active navs-link"  href="{% url "blog"%}"
+                  >Blog</a>
+                  <div id="dropdown-menu2" class="dropdown-blog">
+                        <div class=" dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+                        <!-- <form class="p-2 mb-2 bg-dark border-bottom border-dark">
+                          <input type="search" class="form-control form-control-dark" autocomplete="false" placeholder="Type to filter...">
+                        </form> -->
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            Telecommunication
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../html.pages/home.html">
+                            <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                           Programming
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                          Technology
+                          </a></li>
+                        </ul>
+                      </div>
+                    </div>   
+                <a
+                  class="services nav-link active navs-link" 
+                  href="{% url "about" %}"
+                  >About us</a>
+                  <a class="services nav-link active navs-link" href="{% url "newProjects" %}">New Projects</a
+                >
+                <a class="nav-link login" href="{% url "sign_in" %}">| Log In</a>
+                {%else%}
+                <a class="nav-link login" href="{% url "logout" %}">| Log Out</a>
+                <a href="" class="text-start nav-link a-tags .navs-link  ">Signed in as {{user.username}}</a>
+                 {%endif%}
+        </div>
+         <form class="search" role="search">
+          <div class="seacrh d-flex ">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button  id = 'search-btn' class="btn  btn-outline-info" type="submit">Search</button>
+          </div> 
+        </form> 
+        </div>
+ 
+    </nav>
+  </header>
+    {% block content %}
+      {% endblock content %}
+    <script src="{% static '../static/JS/Navbar-Footer.js'%}"></script>
+    <script src="{% static '../static/admin/style/js/bootstrap.bundle.js'%}"></script>
+  </body>
+<footer class="py-5"> 
+    <div class="container"> 
+  <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Services</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div> 
+     <div class="col-6 col-md-2 mb-3"> 
+     
+        <h5>Conduct Us</h5>
+        
+        <ul class="nav flex-column">
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Email :</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><strong>tnctelecomms@gmail.com</strong></a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Call :0773735227</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Call :0786812481</a></li>
+         </ul>
+        
+      </div> 
+      <div class="col-6 col-md-2  mb-3">
+        <div class="text-center">
+         <h5>Address</h5>
+        
+        <ul class="nav flex-column ">
+          <li class="nav-item mb-2">Harare</li>
+          <li class="nav-item mb-2">Mutare</li>
+        </ul>
+      </div>
+    </div>
+       <div class="col-md-5 offset-md-0 mb-3 ">
+        <form class="comment">
+          <h5>Leave a comment</h5>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <input type="text" class="form-control" placeholder="Write Your Comment">
+            <button  id ='comment'class="btn btn-outline-info" type="button">Submit</button>
+         </div>
+       </form>
+      </div> 
+   </div> 
+
+     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+     <p> Develped by NITACAGRA SOFTWARES</p>
+      <p>&copy; <span id="time">2023</span> Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg>Twitter</a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="https://www.instagram.com/"/></svg>Instagram</a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg>Facebook</a></li>
+      </ul> 
+    </div> 
+   
+  <script src="../style/js/bootstrap.bundle.js"></script>
+   </footer>
+
+</html>
+
+

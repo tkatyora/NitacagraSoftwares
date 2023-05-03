@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  <title>Chirembavanku | Tips </title></head> {%endblock title%}
+    <body>   
+   <h3>update tip<h3>
+    
+    <form method="POST">
+      {%csrf_token %}
+     <div class="row g-3">
+        <div class="col-12">
+          <div class="form">
+            <label for="Category" class="form-label user">Enter Category</label
+            >
+          {{form.category}}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form">
+            <label for="disease" class="form-label user">Enter Disease</label
+            >
+           {{form.Disease}}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form">
+            <label for="disease" class="form-label user">Enter Tip</label
+            >
+          {{form.Tip}}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form">
+            <label for="disease" class="form-label user">Enter Creater</label
+            >
+            {{form.Creater}}
+          </div>
+        </div>
+        <div class="col-12 col-sm-4">
+        </br>
+          <button class="btn btn-primary w-75 py-1" type="submit">
+            Save
+          </button>
+        </div>
+      </div>
+      <hr />
+    </form>
+                 
+      </section>
+      <script src="{% static '../static/JS/service.js'%}"></script>
+    </body>
+  {%endblock content%}

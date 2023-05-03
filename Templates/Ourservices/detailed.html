@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {%block content%} {%load static%}
+<body>
+  <br />
+  <br />
+  <br />
+  <form id="form-id" method="VIEW" class="shadow-lg mt-5">
+    <br />
+    <div class="message mt-3 text-center">
+      <h5>More Details About The Service</h5>
+    </div>
+    <br /><br />
+    <div class="mx-sm-4">
+      <h4 class="">Service : {{moreInfo.name}}</h4>
+      <p class="lead"><b>Discription</b> :{{moreInfo.FullDisc}}</p>
+
+      {%if not moreInfo.specialOffer%}
+      <p class="lead price">Price: {{moreInfo.oldPrice}}</p>
+      {%else%}
+      <p class="lead price"><em>Price: {{moreInfo.oldPrice}}</em></p>
+      <p class="lead price">
+        <em> Price Reduced to:{{moreInfo.newPrice}} </em>
+      </p>
+      {%endif%}
+      <br />
+      <div class="text-center">
+        <button
+          type="button"
+          id="back"
+          class="btn btn-secondary home more button"
+          href="{% url 'services'%}"
+        >
+          <a href="{% url 'services'%}">Cancel</a>
+        </button>
+        <button type="submit" class="btn btn-secondary ms-5 button more">
+          <a href="{% url 'buyservice'%}"> Buy</a>
+        </button>
+        <br />
+        <br />
+      </div>
+    </div>
+  </form>
+
+  <script src="{% static '../static/JS/view.js'%}"></script>
+</body>
+{%endblock content%}

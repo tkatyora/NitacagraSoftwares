@@ -1,0 +1,59 @@
+body{
+    /* background-color: gray; */
+}
+.hero{
+    position: relative;
+    margin-left: 40%;
+   
+}
+.calculator{
+    border: 4px green solid;
+    width: 330px;
+    height: 400px; 
+    padding: 20px;
+    border-radius: 20px;
+}
+h2{
+    font-family: cursive;
+}
+.display{
+    border:3px red solid ;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 2em;
+    height: 21%;
+}
+.rows{
+    margin-top: 10px;
+}
+.row{
+    padding-left: 10px;
+}
+.btn ,
+.operator-btn{
+    width: 65px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 3px 5px;
+    font-size: 1.8em;
+}
+.btn:hover,
+.operator-btn:hover{
+    background-color: green;
+}
+.del{
+    font-size: 1.1em;
+}
+.zero{
+    width: 145px;
+}
+#equal{
+    background-color: blue;
+}
+.thanks{
+    font-family: cursive;
+    
+    
+    font-size: 0.7em;
+
+}
