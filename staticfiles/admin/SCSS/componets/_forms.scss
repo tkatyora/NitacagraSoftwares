@@ -1,0 +1,132 @@
+@use '../customize' as *;
+
+.admin-hero{
+    .img{
+        position:absolute;
+        border-radius: 20px;
+        width: 350px;
+        height: 400px;
+       .img02{
+        position: relative;
+        margin-top: -15px;
+       
+       }
+    
+        }
+        .container-form{
+            margin-left: 20%;
+           
+            margin-top: 10%;
+        
+
+        }
+        
+        .new-account{
+            a{
+                text-decoration: none;
+                font-size: 1em;
+                color: $blue;
+            }
+           
+        }
+    }
+
+// form of the administration
+form {
+    width: 350px;
+    position: relative;
+    margin-left: 35%;
+    border-radius: 10px;
+    background-color: $primary !important;
+    
+   
+    .form{
+        margin-left: 3rem;
+        margin-right: 3.5rem;
+        width: 250px;
+        
+       
+        .login{
+            color:$secondary;
+            padding-top: 33px;
+            font-size: 1.7em;
+        }
+        p{
+            position: absolute;
+            display: none;
+        }
+        .input{
+            border: 2px #ced4da solid;  
+        }
+        .input:focus{
+            color: #212529;
+            font-style: italic;
+           
+            border: 2px $blue solid;
+        }
+        .error-class{
+            color: $red !important;
+            margin-top: 30px;
+            font-family: cursive;
+        }
+        .user{
+            margin-top: 30px;
+        }
+    }
+
+        .more-btn{
+            margin-left: 50%;
+        }
+    
+
+}
+#form-id{
+    z-index: 2;
+   
+}
+.form2{
+    position: absolute;
+    top: 0%;
+    z-index: 1;
+    .email{
+      margin-top: 30px;
+    }
+   
+    
+}
+
+#show{
+    position: absolute;
+             
+    left: 71%;
+    margin-top: -30px;
+    cursor: pointer;
+}
+.regester-hero{
+    margin-top: 7%;
+}
+@media (max-width :$mobile) {
+
+
+    .admin-hero {
+        .img {
+            display: none;
+        }
+
+        .container-form {
+            margin-left: 5.1%;
+            margin-top: 30%;
+        }
+
+        .form {
+            margin-left: 1rem;
+        }
+
+        form {
+            width: 280px;
+            position: relative;
+            margin-left: 0%;
+        }
+
+    }
+}
