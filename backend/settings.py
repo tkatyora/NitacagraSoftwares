@@ -85,11 +85,6 @@ INSTALLED_APPS = [
    
     #'Reports'
 
-    #APIs FOR ALL APLICATIONS
-    'nitacagraApi',
-   # 'murimiApi',
-    #'womeninmarketApi'
-  
 ]
 
 MIDDLEWARE = [
