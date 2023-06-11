@@ -7,23 +7,29 @@ body {
 }
 
 .hero-index {
-    .commingProjects {
-            button:hover {
-                background-color: $green !important;
-            }
-        }
-    .list-project {
-            li {
-                font-size: 1.5em;
-            }
-        }
-    .display {
-            font-size: 1.7em;
-            font-family: cursive;
-        }
-    .project1 {
-            display: none;}
     margin-top: 5%;
+
+    .commingProjects {
+        button:hover {
+            background-color: $green !important;
+        }
+    }
+
+    .list-project {
+        li {
+            font-size: 1.5em;
+        }
+    }
+
+    .display {
+        font-size: 1.6em;
+        font-family: cursive;
+
+    }
+
+    .project1 {
+        display: none;
+    }
 
     .caption {
         position: absolute;
@@ -93,14 +99,6 @@ body {
 
 }
 
-//services hero
-.service-hero {
-    .banner {
-        margin: 0;
-
-    }
-}
-
 // regester page
 .regester-hero {
     position: relative;
@@ -124,7 +122,6 @@ body {
     margin-right: 10%;
 
     .history {
-
         margin-top: 40px;
     }
 
@@ -180,12 +177,13 @@ body {
         font-family: cursive;
     }
 
-    .trial-projects {
-        margin-top: 6%;
-    }
+}
 
-    .trial {
-        margin-top: 3%;
+//services hero
+.service-hero {
+    .banner {
+        margin: 0;
+
     }
 }
 
@@ -193,12 +191,12 @@ body {
 
 // common sections
 #greeting {
-    color: $blue !important;
+    color: $secondary !important;
 
 }
 
 #greeting:hover {
-    color: $green !important;
+    color: $blue !important;
     font-family: cursive;
     font-weight: bolder;
     cursor: pointer;
@@ -206,39 +204,44 @@ body {
 
 
 // for the list section
-.list-section {
-    .col-3 {
-        .txt {
-            a {
-                color: $secondary !important;
-                text-decoration: none;
-                font-size: 1.2em;
 
-            }
-        }
+.specialOffer {
+    background-color: $cyan !important;
+    //width: 100px;
+    // border-radius: 5px;
 
-        img {
-            width: 15%;
-            height: 15%;
-        }
+    position: absolute;
+
+    font-family: cursive;
+    margin-right: 0;
+
+    h5 {
+        font-size: .9em;
+        margin-left: 1px;
+        padding: 5px;
     }
+
+
+
 }
 
 .price {
     font-weight: bolder;
+    font-size: 0.8em;
+    font-family: cursive;
+    color: $blue !important;
+
+
 
 }
 
-.specialOffer {
-    background-color: $red !important;
-    width: 160px;
-    border-radius: 5px;
-    font-size: 1em;
-    position: absolute;
-    margin-top: 20px;
-    font-style: italic;
-    margin-left: 7%;
+.buybutton {
+    display: inline-flex;
+    margin-left: -15px;
+}
 
+.icons {
+    font-size: 4em;
 }
 
 .a-tags {
@@ -257,6 +260,12 @@ body {
 
 .header-grey {
     opacity: 0.7;
+    color: $gray-200 !important;
+
+}
+
+.header-cyan {
+    color: $cyan !important;
 
 }
 
@@ -335,22 +344,23 @@ button {
 }
 
 @media (max-width : $mobile) {
+
     // respomsive of the about page
-        .hero-about {
-            margin-top: 30%;
-            // margin-left: 15%;
-    
-            .history {
-                margin-top: 40px;
-            }
-    
-            .col-4 {
-                flex: 0 0 auto;
-                width: 98%;
-            }
+    .hero-about {
+        margin-top: 30%;
+        // margin-left: 15%;
+
+        .history {
+            margin-top: 40px;
         }
-    
-        //end of the about page
+
+        .col-4 {
+            flex: 0 0 auto;
+            width: 98%;
+        }
+    }
+
+    //end of the about page
     .col-4 {
         flex: 0 0 auto;
         width: 92%;
@@ -399,8 +409,26 @@ button {
         }
     }
 
+    .service-hero {
+        .carousel-item {
+            .w-100 {
+                height: 100vh !important;
+
+
+            }
+
+            .mt-5 {
+                margin-top: 0 !important;
+            }
+
+        }
+
+
+    }
+
 
 }
+
 @media (max-width:$laptop) and (min-width : $mobile) {
     .hero-about {
         margin-top: 20%;
@@ -417,5 +445,3 @@ button {
     }
 
 }
-
-
