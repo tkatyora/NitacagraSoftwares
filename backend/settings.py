@@ -80,11 +80,6 @@ INSTALLED_APPS = [
     'Ourservices',
     'portal',
     'learning',
-
-    #MURIMIVANGU APPLICATIIONS
-    'MVAnimalManagement',
-    "MurimiVanguPortal",
-    "MVFarmers",
     'Tips',
     
     #COMMON APPLICATION    
@@ -92,14 +87,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     'rest_framework',
-   
-    #'Reports'
 
-    #APIs FOR ALL APLICATIONS
-    'nitacagraApi',
-   # 'murimiApi',
-    #'womeninmarketApi'
-  
 ]
 
 MIDDLEWARE = [

@@ -19,7 +19,6 @@ def services(request):
     content = {
         'service': serviceinfo
     }
-
     return render(request, 'Ourservices/offerredServices.html', content)
 
     
