@@ -13,7 +13,7 @@ from main.models import aboutUs ,advertisment
 # Create your views here.
 #PORTAL FOR NITACAGRA
 orderInfo = order.objects.all()
-customer = customers.objects.all()
+customer = CustomerWithoutAccount.objects.all()
 customerWithAccount = ContentCreater.objects.all()
 PortalServices = servicesTable.objects.all() 
 AllUsers = NitacagraUsers.objects.all()

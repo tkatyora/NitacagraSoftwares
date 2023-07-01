@@ -1,40 +1,123 @@
 from django import forms
 from django.forms import ModelForm 
-from .models import servicesTable , order ,customers
+from .models import * 
+from django.utils.translation import gettext_lazy as _
 from datetime import datetime
+
 class addServiceForm(ModelForm):
-    name =forms.CharField(label='Name Of The Service', max_length=20, required=True)
-    pic =forms.ImageField(label='Select Picture(optinal)', required=False)
-    briefDisc=forms.CharField(label='Maximum Words 80',max_length=90, required=True,
+    name = forms.ChoiceField(label=' Select Name Of The Service',choices=servicesTable().Name,required=True)
+    #name =forms.CharField(, required=False,choices = servicesTable().Name)
+    picture =forms.ImageField(label='Select Picture Of service', required= False ,help_text='Picture Should be Less Than 2Mb' ,error_messages={
+        'required':'The Image is required',
+    })
+    Discription=forms.CharField(label='Service Discription', required=True, help_text='Discription Should Be 150 words ',
                               widget=forms.Textarea(
                                   attrs={
                                       'rows':5,
-                                      'cols':5,
-                                      'placeholder':'Enter A brief Discription Of The Service'
+                                      'cols':5, 
                                   }
                               ))
-    FullDisc=forms.CharField(label='Maximum Words 150 ',max_length=160, required=True,
-                              widget=forms.Textarea(
+    specialOffer= forms.BooleanField(label='On Promotion', required=True, help_text='select if the Product is on Promotion')
+    type = [('standard','Standard'),('premium',"Premium"),('ecomerce','E-commerce'),('custom','Custom')]
+    Name =forms.ChoiceField(label='Select Type',choices=type, required=True)
+    Price= forms.DecimalField(label='Price' ,required=True,decimal_places=2)
+    Pages =forms.CharField(label='Enter Pages Details', max_length=60,  required=True , widget=forms.TextInput(
                                   attrs={
-                                      'rows':10,
-                                      'cols':5,
-                                      'placeholder':'Enter A Full Discription Of The Service'
-                                  }
+                                      
+                                       'placeholder':'example Maximun of 20 pages',
+                                       'class':'form-control input',}
                               ))
-    oldPrice =forms.DecimalField(label='Current Price', required=True,initial=30.00,max_digits=7,decimal_places=2)
-    newPrice =forms.DecimalField(label='Reduced Price', required=False,initial=00.00,max_digits=7,decimal_places=2)
-    class Meta:
+    Host =forms.CharField(label='Enter Hosting Platform',  max_length=50, required=True , widget=forms.TextInput(
+                                  attrs={
+                                      'rows':5,
+                                      'cols':5,
+                                       'placeholder':'example Hosted on render.com',
+                                       'class':'form-control input',}
+                              ))
+    HostDays =forms.CharField(label='Number oF Hosted Days', max_length=50, required=True ,
+                               widget=forms.Textarea(
+                                  attrs={
+                                      'rows':2,
+                                      'cols':5,
+                                      'placeholder':'example Hosted for 21 days each month',
+                                       'class':'form-control input',}
+                              ))
+    Responsive =forms.CharField(label='Enter Detaild On Responsvive Device', max_length=50, required=True , 
+                                widget=forms.Textarea(
+                                  attrs={
+                                      'rows':2,
+                                      'cols':5,
+                                      'placeholder':'example Responsive to Mobile,Laptops',
+                                       'class':'form-control input',}
+                              ))
+    SocialMedia =forms.CharField(label='Enter Details on Social Media', max_length=50, required=True , widget=forms.TextInput(
+                                  attrs={
+                                      'placeholder':'example Links To Facebook',
+                                       'class':'form-control input',}
+                              ))
+    seo= forms.BooleanField(label='SEO', required=True,)
+    
+    class Meta: 
         model = servicesTable
-        fields =['name','section','pic','briefDisc','FullDisc','newPrice','oldPrice','specialOffer']
-
-class BuyserviceForm(ModelForm):
-    account =[('Yes','Create an Account'),
-              ('No','Do Not Create an Account')]
-    FullName =forms.CharField(label='Enter Your Name', max_length=50, required=True , widget=forms.TextInput(
+        fields = ['name' ,'picture','Discription','specialOffer','DetailedDisc']
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+class DetailedForm(ModelForm):
+    type = [('standard','Standard'),('premium',"Premium"),('ecomerce','E-commerce'),('custom','Custom')]
+    Name =forms.ChoiceField(label='Select Type',choices=type, required=True)
+    
+    Price= forms.DecimalField(label='Price' ,required=True,decimal_places=2)
+    class Meta: 
+        model = Detailed
+        fields = ['Name' ,'Price',]
+        
+        
+class FunctionalityForm(ModelForm):
+    
+    Pages =forms.CharField(label='Enter Pages Details',  required=True , widget=forms.TextInput(
+                                  attrs={
+                                       'placeholder':'example Maximun of 20 pages',
+                                       'class':'form-control input',}
+                              ))
+    Host =forms.CharField(label='Enter Your Name', required=True , widget=forms.TextInput(
+                                  attrs={
+                                       'placeholder':'example Hosted on render.com',
+                                       'class':'form-control input',}
+                              ))
+    HostDays =forms.CharField(label='Number oF Hosted Days', max_length=50, required=True , widget=forms.TextInput(
                                   attrs={
                                        'class':'form-control input',}
                               ))
-    Email=forms.EmailField(label='Enter Email', required=True , widget=forms.TextInput(
+    Responsive =forms.CharField(label='Enter Detaild On Responsvive Device', max_length=50, required=True , widget=forms.TextInput(
+                                  attrs={
+                                       'class':'form-control input',}
+                              ))
+    SocialMedia =forms.CharField(label='Enter Details on Social Media', max_length=50, required=True , widget=forms.TextInput(
+                                  attrs={
+                                       'class':'form-control input',}
+                              ))
+    seo= forms.BooleanField(label='SEO', required=True,)
+    class Meta: 
+        model = Functionality
+        fields = ['Pages' ,'Host', 'HostDays','Responsive','SocialMedia']
+
+
+
+
+class BuyserviceForm(ModelForm):
+    name =forms.CharField(label='Enter Your Name', max_length=50, required=True , widget=forms.TextInput(
+                                  attrs={
+                                       'class':'form-control input',}
+                              ))
+    email=forms.EmailField(label='Enter Email', required=True , widget=forms.TextInput(
                                   attrs={
                                        'class':'form-control input',}
                               ))
@@ -42,16 +125,8 @@ class BuyserviceForm(ModelForm):
                                   attrs={
                                        'class':'form-control input',}
                               ))
-    Location =forms.CharField(label='Enter Location', max_length=50, required=True , widget=forms.TextInput(
-                                  attrs={
-                                       'class':'form-control input',}
-                              ))
-    Account =forms.ChoiceField( choices=account, label='Customer Account', required=True , widget=forms.RadioSelect(
-                                  attrs={
-                                       'class':'form-control input',}
-                              ))
     class Meta:
-        model = customers
+        model = CustomerWithoutAccount()
         fields = '__all__'
 
 class CreateorderForm(ModelForm):

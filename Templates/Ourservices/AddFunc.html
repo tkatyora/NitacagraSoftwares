@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+ {%block content%} 
+ {%load static%}
+{% block title%}
+<head>
+<title>NitacagraSoftwares |Add service</title>
+</head>
+{%endblock title%}
+<body>
+  {% load crispy_forms_tags %}
+  <br />
+  <br />
+  <br />
+  <form id="form-id" method="POST" class="shadow-lg mt-5">
+    {% csrf_token %}
+    <br />
+    <div class="message mt-3 text-center">
+      <h5>Add New Service</h5>
+    </div>
+    {% for message in messages %} {% if message.tags == 'warning'%}
+    <div class="error-class">
+      <p class="error">{{message}}</p>
+    </div>
+    {%endif%} {%endfor%}
+    <br />
+    <div class=" text-start mx-sm-5">
+      {% comment %} chack on the form class {% endcomment %}
+      <p class="lead">
+        
+      </p>
+      
+      <p class="lead">
+        <strong>{{form.name|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.picture|as_crispy_field}}</strong>
+      </p>
+      <br />
+      <p class="lead">
+        <strong>{{form.Discription|as_crispy_field}}</strong>
+      </p>
+      <br />
+      {% comment %} <p class="lead">
+        <strong>{{form.DetailedDisc|as_crispy_field}}</strong>
+      </p>
+      <br />  {% endcomment %}
+    {% comment %} <p class="lead">
+        <strong>{{form.oldPrice|as_crispy_field}}</strong>
+      </p>
+      <br />  {% endcomment %}
+      {% comment %} <p class="lead">
+        <strong>{{form.newPrice|as_crispy_field}}</strong>
+      <br /> {% endcomment %}
+   
+      <p class="lead"><strong>{{form.specialOffer|as_crispy_field}}</strong>
+      </p>
+      <br /> 
+    </div>
+  </br>
+    <div class="text-start mb-5">
+      {% comment %} <button
+        type="button"
+        id="back"
+        class="btn btn-secondary home more button"
+      >
+        <a href="{% url 'dashboard'%}">Cancel</a>
+      </button> {% endcomment %}
+      <button type="submit" class="btn btn-secondary ms-5 w-75 button more">
+        Add Detailed Discription
+      </button>
+    </div>
+  </br>
+  </form>
+
+  <script src="{% static '../static/JS/view.js'%}"></script>
+</body>
+{%endblock content%}

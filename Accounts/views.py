@@ -56,20 +56,9 @@ def signin(request):
         password = request.POST['password']
         User = authenticate(request , username = username , password = password)
         if User is not None:
-            login(request, User)
-            print(request.user)
-            #if LogInRole == 'admin':
-            if username == 'takudzwa':
+                login(request, User)
                 messages.success(request, 'Log In Successfully As An Admin')
                 return redirect('dashboard')
-            #if LogInRole == 'murimi':
-            elif username == 'Gracious':
-                messages.success(request, f'Hie {username} Welcome to MurimiVangu Enjoy Today')
-                return redirect('mainMVdashboard')
-            else:    
-                messages.success(request, 'Log In Successfully As A customer')
-                #customer dashboard
-                return redirect('mainMVdashboard')    
         else:
             message = 'Sory Wrong Username or Paasword'
             messages.warning(request, message)

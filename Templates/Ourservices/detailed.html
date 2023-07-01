@@ -1,45 +1,176 @@
 {% extends 'base.html' %} {%block content%} {%load static%}
-<body>
-  <br />
-  <br />
-  <br />
-  <form id="form-id" method="VIEW" class="shadow-lg mt-5">
-    <br />
-    <div class="message mt-3 text-center">
-      <h5>More Details About The Service</h5>
-    </div>
-    <br /><br />
-    <div class="mx-sm-4">
-      <h4 class="">Service : {{moreInfo.name}}</h4>
-      <p class="lead"><b>Discription</b> :{{moreInfo.FullDisc}}</p>
-
-      {%if not moreInfo.specialOffer%}
-      <p class="lead price">Price: {{moreInfo.oldPrice}}</p>
-      {%else%}
-      <p class="lead price"><em>Price: {{moreInfo.oldPrice}}</em></p>
-      <p class="lead price">
-        <em> Price Reduced to:{{moreInfo.newPrice}} </em>
-      </p>
-      {%endif%}
-      <br />
-      <div class="text-center">
-        <button
-          type="button"
-          id="back"
-          class="btn btn-secondary home more button"
-          href="{% url 'services'%}"
-        >
-          <a href="{% url 'services'%}">Cancel</a>
-        </button>
-        <button type="submit" class="btn btn-secondary ms-5 button more">
-          <a href="{% url 'buyservice'%}"> Buy</a>
-        </button>
-        <br />
-        <br />
+<section class="mt-5 mb-5 service-hero text-start">
+      <div class="text-end mx-sm-3 contaiber-sm mt-5">
+        <h5>
+          Wellcome To
+          <span class="header-cyan">NitacagraSoftwares.</span> Thanks for
+          Choosing us
+        </h5>
+        <h6>Please Select The Web Application Type Of Your Choice</h6>
       </div>
-    </div>
-  </form>
+      <div class="container mb-5 mt-3">
+        <div class="row g-5">
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div action="" method="POST">
+                <h3 class="text-center">Standard</h3>
+                <p class="lead bg-secondary price display-6">$70 USD</p>
+                <ul class="nav flex-column">
+                  <li class="header-cyan nav-item mb-2">Maximun of 20 pages</li>
+                  <li class="nav-item mb-2">Hosted at render.com</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Hosted for 21 days each Month
+                  </li>
+                  <li class="nav-item mb-2">Responsive to Laptop</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Search Engine Optimization(SEO)
+                  </li>
+                  <li class="nav-item mb-2">
+                    Links To Your Facebook and Twitter
+                  </li>
+                  <br />
+                </ul>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary more1 button w-50 buy"
+                  >
+                    <a href="../html.pages/detailed.html">Buy</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div action="" method="POST">
+                <h3 class="text-center">Premiun</h3>
+                <p class="lead bg-secondary price display-6">$150 USD</p>
+                <ul class="nav flex-column">
+                  <li class="header-cyan nav-item mb-2">Maximun of 50 pages</li>
+                  <li class="nav-item mb-2">Hosted at render.com</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Hosted for 21 days each Month
+                  </li>
+                  <li class="nav-item mb-2">
+                    Responsive to Laptop and Mobile Phones
+                  </li>
+                  <li class="header-cyan nav-item mb-2">
+                    Search Engine Optimization(SEO)
+                  </li>
+                  <li class="nav-item mb-2">
+                    Links To Your Facebook ,instagram Twitter
+                  </li>
+                </ul>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary more1 button w-50 buy"
+                  >
+                    <a href="../html.pages/detailed.html">Buy</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div action="" method="POST">
+                <h3 class="text-center">E-Commerce</h3>
+                <p class="lead bg-secondary price display-6">$250 USD</p>
+                <ul class="nav flex-column">
+                  <li class="header-cyan nav-item mb-2">Unlimited</li>
+                  <li class="nav-item mb-2">Hosted at render.com</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Hosted for each Month
+                  </li>
+                  <li class="nav-item mb-2">
+                    Responsive to All mobile,Tablets ,Desktop and Laptop
+                  </li>
+                  <li class="header-cyan nav-item mb-2">
+                    Search Engine Optimization(SEO)
+                  </li>
+                  <li class="nav-item mb-2">
+                    Links To Your All Your social Media
+                  </li>
+                </ul>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary more1 button w-50 buy"
+                  >
+                    <a href="../html.pages/detailed.html">Buy</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div action="" method="POST">
+                <h3 class="text-center">Custom Website</h3>
+                <p class="lead bg-secondary price display-6">$... USD</p>
+                <ul class="nav flex-column">
+                  <li class="header-cyan nav-item mb-2">
+                    Your preference pages
+                  </li>
+                  <li class="nav-item mb-2">Hosted at render.com</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Hosted for 21 days each Month
+                  </li>
+                  <li class="nav-item mb-2">
+                    Responsive to Your preference Devices
+                  </li>
+                  <li class="header-cyan nav-item mb-2">
+                    Search Engine Optimization(SEO)
+                  </li>
+                  <li class="nav-item mb-2">
+                    Links To Your Your preference Social Media
+                  </li>
+                </ul>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary more1 button w-50 buy"
+                  >
+                    <a href="../html.pages/detailed.html">Buy</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border shadow bg-light">
+              <div action="" method="POST">
+                <h3 class="text-center">Final Year Project</h3>
+                <p class="lead bg-secondary price display-6">$50 USD</p>
+                <ul class="nav flex-column">
+                  <li class="header-cyan nav-item mb-2">Maximun of 10 pages</li>
+                  <li class="nav-item mb-2">Hosted at render.com</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Hosted for 21 days each Month
+                  </li>
+                  <li class="nav-item mb-2">Responsive to Laptop</li>
+                  <li class="header-cyan nav-item mb-2">
+                    Search Engine Optimization(SEO)
+                  </li>
+                  <li class="nav-item mb-2">
+                    Links To Your Facebook and Twitter
+                  </li>
+                </ul>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary more1 button w-50 buy"
+                  >
+                    <a href="../html.pages/detailed.html">Buy</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="{% static '../static/JS/view.js'%}"></script>
-</body>
 {%endblock content%}

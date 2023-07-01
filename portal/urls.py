@@ -14,6 +14,5 @@ urlpatterns = [
     path('UpdateHome/<int:pk>', views.UpdateHome , name= 'updateHome'),
     #commom url
     path('profile',views.Profile,name='profile'),
-    #Portal for murimivangu
-    path('murimivangu-dashboard',views.mainDashBoard , name='mainMVdashboard')
+
 ]

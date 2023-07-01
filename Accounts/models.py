@@ -40,12 +40,17 @@ class StaffTable(models.Model):
     def __str__(self):
         return f"customer Name : {self.user.username}"
 
-class customers(models.Model):
-    account =[('Yes','Create an Account'),
-              ('No','Do Not Create an Account')]
-    user = models.OneToOneField("NitacagraUsers", on_delete=models.CASCADE ,null =True)
-    Account = models.CharField(choices = account , null = True,max_length=20)
+# class customers(models.Model):
+#     account =[('Yes','Create an Account'),
+#               ('No','Do Not Create an Account')]
+#     user = models.OneToOneField("NitacagraUsers", on_delete=models.CASCADE ,null =True)
+#     Account = models.CharField(choices = account , null = True,max_length=20)
     
-    def __str__(self):
-        return f' information of ==> {self.FullName} ' 
-  
+#     def __str__(self):
+#         return f' information of ==> {self.FullName} ' 
+
+class CustomerWithoutAccount(models.Model):
+    name = models.CharField(max_length=50 ,null=True,blank=False)
+    email =models.EmailField(max_length=254 ,blank=False)
+    PhoneNumber = models.IntegerField(blank=False)
+    Deposit = models.BooleanField(default=False)

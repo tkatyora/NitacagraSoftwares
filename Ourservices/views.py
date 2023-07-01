@@ -3,7 +3,7 @@ from .models import *
 from django.contrib.auth.models import User
 from Accounts.models import ContentCreater
 from django.core.mail import send_mail
-from .forms import addServiceForm ,BuyserviceForm , CreateorderForm
+from .forms import *
 from django.contrib import messages
 import random
 from django.contrib.auth.decorators import login_required , permission_required
@@ -20,6 +20,12 @@ def services(request):
         'service': serviceinfo
     }
     return render(request, 'Ourservices/offerredServices.html', content)
+def testservices(request):
+    content = {}
+    content = {
+        'service': serviceinfo
+    }
+    return render(request, 'Ourservices/testServices.html', content)
 
     
  #VIEWA FOR ADDING SERVICES   
@@ -28,9 +34,50 @@ def addservices(request):
     if request.method == 'POST':
         form = addServiceForm(request.POST)
         if form.is_valid():
+            form.save() 
+            messages.success(request, 'servive added succesfully')
+            return redirect('detailed')
+        else:
+            messages.warning(request, 'Sorry servive not updated succesfully')
+    else:
+        form = addServiceForm()
+    content = {}
+    content = {
+        'form': form,
+
+    }
+    return render(request, 'Ourservices/AddService.html', content)
+
+
+@login_required(login_url='sign_in') 
+def addDetailedDisc(request ,ID):
+    if request.method == 'POST':
+        update = servicesTable.objects.get(id = ID )
+        form = DetailedForm(request.POST ,instance = update)
+        if form.is_valid():
             form.save()
             messages.success(request, 'servive added succesfully')
-            return redirect('dashboard')
+            return redirect('detailed')
+        else:
+            messages.warning(request, 'Sorry servive not updated succesfully')
+    else:
+        form = addServiceForm()
+    content = {}
+    content = {
+        'form': form,
+
+    }
+    return render(request, 'Ourservices/AddDetailed.html', content)
+
+
+@login_required(login_url='sign_in') 
+def addFunctionality(request):
+    if request.method == 'POST':
+        form = addServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'servive added succesfully')
+            return redirect('details')
         else:
             messages.warning(request, 'Sorry servive not updated succesfully')
     else:

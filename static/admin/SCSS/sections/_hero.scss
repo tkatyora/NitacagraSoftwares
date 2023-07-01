@@ -1,13 +1,11 @@
 @use "../customize" as *;
-
-
 // home hero
 body {
     background-color: $gray-100 !important;
 }
 
 .hero-index {
-    margin-top: 5%;
+    // margin-top: 5%;
 
     .commingProjects {
         button:hover {
@@ -33,10 +31,10 @@ body {
 
     .caption {
         position: absolute;
-        right: 15%;
+        right: 55%;
         bottom: 1.25rem;
         left: 15%;
-        top: 35%;
+        top: 55%;
         color: #fff;
         font-size: 2rem;
         text-align: center;
@@ -106,11 +104,7 @@ body {
     .message {
         font-family: cursive;
         position: relative;
-
-        h6 {
-            color: $red;
-
-        }
+        color: $red !important;
     }
 }
 
@@ -154,28 +148,6 @@ body {
 
     margin: 2%;
 
-    .caption {
-        position: absolute;
-        right: 15%;
-        bottom: 1.25rem;
-        left: 15%;
-        top: 35%;
-        color: #fff;
-        font-size: 1.5rem;
-        text-align: center;
-        font-weight: bolder;
-
-
-    }
-
-    .slide2 {
-
-        top: 50%;
-        color: $blue !important;
-        font-weight: bolder;
-        font-size: 2rem;
-        font-family: cursive;
-    }
 
 }
 
@@ -187,7 +159,12 @@ body {
     }
 }
 
-.service-hero {}
+
+.whatsnew-hero {
+    .wats-new {
+        display: inline-flex;
+    }
+}
 
 // common sections
 #greeting {
@@ -227,9 +204,11 @@ body {
 
 .price {
     font-weight: bolder;
-    font-size: 0.8em;
+    font-size: 1em;
     font-family: cursive;
-    color: $blue !important;
+    color: $white !important;
+    text-align: center !important;
+    padding: 0.6em;
 
 
 
@@ -259,13 +238,16 @@ body {
 }
 
 .header-grey {
-    opacity: 0.7;
     color: $gray-200 !important;
 
 }
 
 .header-cyan {
     color: $cyan !important;
+
+}
+.header-red {
+    color: $red !important;
 
 }
 
@@ -346,6 +328,15 @@ button {
 @media (max-width : $mobile) {
 
     // respomsive of the about page
+    .carousel-item {
+        .w-100 {
+            height: 75vh !important;
+
+            margin-right: 0;
+
+        }
+    }
+
     .hero-about {
         margin-top: 30%;
         // margin-left: 15%;
@@ -412,7 +403,7 @@ button {
     .service-hero {
         .carousel-item {
             .w-100 {
-                height: 100vh !important;
+                // height:100vh!important;
 
 
             }
@@ -424,6 +415,17 @@ button {
         }
 
 
+    }
+
+    .whatsnew-hero {
+        .col-12 {
+            flex: 0 0 auto;
+            width: auto !important;
+        }
+
+        .wats-new {
+            display: block;
+        }
     }
 
 

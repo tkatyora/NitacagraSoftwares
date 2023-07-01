@@ -32,8 +32,11 @@
             {%if not user.is_authenticated%}
             <div class="navbar-nav nav-links">
               <hr />
-               <a class="nav-link active navs-link" aria-current="page"  href="{% url "home" %}">Home</a>     
-              <a id ='service' class="nav-link active navs-link" aria-current="page"  href="{% url "services" %}">Our Services</a>     
+             
+
+              
+               <a class="nav-link active navs-link" aria-current="page"  href="{% url "home" %}"> <big>Home</big>  </a>     
+              <a id ='service' class="nav-link active navs-link" aria-current="page"  href="{% url "services" %}"> <big>Our Services</big> </a>      
               <div id="dropdown-menu" class="dropdown-service">
                 <div
                   class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px"
@@ -64,7 +67,7 @@
             </div>
 
                <a id="blog" class="nav-link active navs-link"  href="{% url "blog"%}"
-                  >Blog</a>
+                  > <big> Blog</big></a>
             <div id="dropdown-menu2" class="dropdown-blog">
               <div
                 class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px"
@@ -112,14 +115,16 @@
              <a
                   class="services nav-link active navs-link" 
                   href="{% url "about" %}"
-                  >About us</a>
-                  <a class="services nav-link active navs-link" href="{% url "newProjects" %}">What's New</a
+                  ><big>About us</big> </a>
+                  <a class="services nav-link active navs-link" href="{% url "newProjects" %}"> <big>What's New</big> </a
                 >
-              <a class="nav-link login" href="{% url "sign_in" %}">| Log In</a>
+                <input type="">
+              <a class="nav-link login" href="{% url "sign_in" %}"> <big>|Log In</big> </a>
                 {%else%}
-                <a class="nav-link login" href="{% url "logout" %}">| Log Out</a>
-                <a href="" class="text-start nav-link a-tags .navs-link  ">Signed in as {{user.username}}</a>
-                 {%endif%}
+               
+               
+                <a href="" class="text-start nav-link a-tags p4 .navs-link  ">GoodDay   <span class="mx-3 login">     {{user.first_name}}</span> </a>
+                
           </div>
           <!-- <form class="search" role="search">
           <div class="seacrh d-flex ">
@@ -127,6 +132,10 @@
             <button  id = 'search-btn' class="btn  btn-outline-info" type="submit">Search</button>
           </div> 
         </form> -->
+         <a href="" class="text-start nav-link a-tags .navs-link  "> <big><i class="fa-solid fa-circle-user"></i></big> {{user.email}}</a>
+          <a class="nav-link login" href="{% url "logout" %}">| Log Out</a> 
+                 {%endif%}
+                
         </div>
       </nav>
     </header>
@@ -195,6 +204,7 @@
           <li class="ms-3"><a class="link-light a-tags" href="https://twitter.com/home"> <i class="fa-brands facebook fa-twitter"></i> Twitter</a></li>
           <li class="ms-3"><a class="link-light  a-tags" href="https://www.instagram.com/"><i class="fa-brands  a-tags fa-instagram"></i> Instagram</a></li>
           <li class="ms-3"><a class="link-light  a-tags" href="https://www.facebook.com/"><i class="fa-brands facebook a-tags fa-facebook"></i> Facebook</a></li>
+          <li class="ms-3"><a class="link-light  a-tags" href="https://www.facebook.com/"><i class="fa-brands facebok a-tags fa-linkedin"></i> LinkedIn</a></li>
         </ul> 
       </div> 
     

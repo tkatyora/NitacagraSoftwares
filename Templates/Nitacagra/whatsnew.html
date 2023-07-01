@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load static%}
+{% block title%}<head>  
+  <title>NitacagraSoftwares | Page Whats New</title></head> 
+  {%endblock title%}
+
+
+  <header>
+      <nav
+        class="navbar navbar-expand-sm navbar-dark shadow bg-dark rounded fixed-top menu"
+      >
+      <div class="container-fluid">
+          <a href="../html.pages/home.html" class="navbar-brand logo-title">
+            NITACAGRA <span class="sub-logo">Softwares</span></a
+          >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-links navbar-collapse" 
+              id="navbarCollapse">
+            <div class="navbar-nav nav-links">
+              <hr >
+           <a class= " nav-link active navs-link" aria-current="page" href="../html.pages/home.html">Home</a>  
+             <a id ='service' class="  nav-link active navs-link" href="../html.pages/offerredServices.html"
+                  >Services</a>
+                  <div id="dropdown-menu" class="dropdown-service">
+                        <div class=" dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            Our Services
+                          </a></li>
+                          <!-- <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../html.pages/project-guides.html">
+                            <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                          Project Guides
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../html.pages/products.html">
+                            <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                          Products
+                          </a></li> -->
+                        </ul>
+                      </div>
+                    </div>   
+                  </div>
+           
+                <a id="blog" class="  nav-link active navs-link" href="../html.pages/undeveloped.html" 
+                  >Blog  <span>
+                 
+                  </span> </a>
+                  <div id="dropdown-menu2" class="dropdown-blog">
+                        <div class=" dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+                        <!-- <form class="p-2 mb-2 bg-dark border-bottom border-dark">
+                          <input type="search" class="form-control form-control-dark" autocomplete="false" placeholder="Type to filter...">
+                        </form> -->
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                            Telecommunication
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../html.pages/home.html">
+                            <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                           Programming
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                            <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                          Technology
+                          </a></li>
+                        </ul>
+                      </div>
+                    </div>   
+                <a
+                  class="services nav-link active navs-link" 
+                  href="../html.pages/about.html"
+                  >About us</a>
+                <a
+                  class="services nav-link active navs-link" 
+                  href="../html.pages/whatsnew.html"
+                  >What's New</a>
+                  <!-- <a class=" services nav-link active navs-link" href="../html.pages/projetcts.html">New Features</a
+                > -->
+                <a class="nav-link login "href="../html.pages/administration.html">| Log In</a>
+          </div>
+          <!-- <form class="search" role="search">
+          <div class="seacrh d-flex ">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button  id = 'search-btn' class="btn  btn-outline-info" type="submit">Search</button>
+          </div> 
+        </form> -->
+        </div>
+         
+    </nav>
+  </header>
+  <br><br>
+<section class="mt-5 mb-5 whatsnew-hero text-start ">
+       <div class="text-end mx-sm-3 contaiber-sm mt-5">
+        <h5>Wellcome Thanks for Choosing us.</h5>
+        <h6>Find All The New Features in <span class="header-cyan">NitacagraSoftwares</span> and All comming Features</h6>
+       </div>
+       <section class="new mt-5">
+        
+          <div class="container mb-5 mt-3"> 
+            <div class="text-start">
+            <h3>New Features</h3>
+        </div> 
+            <div class="row  g-5">
+                <div class="col-12 wats-new">
+                    <div class="img">
+                        <img class="w-100 img-fluid" src=" {% static '../static/imagies/frontend.jpg' %} " alt="">
+                    </div>
+                    <div class="p-4 border bg-info shadow ">
+                        <p class="lead">Get all Services You want and Enjoy The service</p> 
+                        <p class="lead">To do so, Navigate to the Services page , buy clicking the services link on the Navbar
+                            Then click the Get service Button ,Select the tyoe of service you Want and then enjoy the service you have selected </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
+       <section class="comming">
+        <div class="container mb-5 mt-5"> 
+            <div class="text-start">
+            <h3>Upcomming Features</h3>
+         </div> 
+            <div class="row  g-5">
+                <div class="col-12 wats-new">
+                    <div class="img">
+                        <img class="w-100 img-fluid" src="../imagies/frontend.jpg" alt="">
+                    </div>
+                    <div class="p-4 border shadow bg-warning">
+                        <p class="lead"> <strong>Searching Your Favourite Service</strong></p>
+                        <p class="lead"> It will be more easy for you to get a service , Your Wiil just type the service You want the Serach Box in the navbar Then all the related Service Will shown
+                             to You and You will enjoy the service you want
+                      </p>
+                </div>
+                </div>
+                <div class="col-12 wats-new">
+                    <div class="img">
+                      
+                        <img class="w-100 img-fluid" src="{% static '../imagies/frontend.jpg' %}" alt="">
+                    </div>
+                    <div class="p-4 border shadow bg-warning">
+                        <p class="lead"> <strong>Reading Blog Post</strong></p>
+                        <p class="lead"> Are You a fan of Technology? If so then You wll emjoy reading infomative infromation (Blog Post) for free
+                            Which will let you know the Trending News in the tech Industry. <br>
+                            All You Need To do is to click the blog link in the Nav bar abd start To Enjoy All the Post
+                      </p>
+                </div>
+                </div>
+                <!-- <div class="col-12 wats-new">
+                    <div class="img">
+                        <img class="w-100 img-fluid" src="../imagies/frontend.jpg" alt="">
+                    </div>
+                    <div class="p-4 border shadow bg-light">
+                        <p class="lead"> <strong>Searching Your Favourite Service</strong></p>
+                        <p class="lead"> It will be more easy for you to get a service , Your Wiil just type the service You want the Serach Box in the navbar Then all the related Service Will shown
+                             to You and You will enjoy the service you want
+                      </p>
+                </div>
+                </div> -->
+             </div>
+       </section>
+        
+        
+
+<script src="../style/js/bootstrap.bundle.js"></script>
+<script src="../JS/services.js"></script>
+<script src="../JS/navbar_foote.js"></script>
+<script src="../JS/index.js"></script>
+{%endblock%}

@@ -25,11 +25,7 @@
         <p class="bg-success lead">{{message}}</p>
         {%endif%} {%endfor%}
     </div>
-     <div class ='text-end logout-main'>
-      <p class= 'lead'>
-        <a href="" class=" nav-link lead a-tags">Signed in as {{user.username}}</a>
-        <a class="nav-link  a-tags  lead " href="{% url "logout" %}"> LogOut</a>
-    </div>
+    
     <p/>
        
         
@@ -52,7 +48,7 @@
           </div>
                  <div class="col-4">
             <div class="p-4 border shadow bg-light">
-             <div class="header-grey ">
+             <div class="opacity-75 ">
                 <h3 >Services Pannel</h3>
               </div>
               <hr>
@@ -63,20 +59,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="p-4 border shadow bg-light">
-               <div class="header-grey ">
-                <h3>Projects</h3>
-              </div>
-              <hr>
-              <div class="a-tags my-link">
-                <a href="{%url 'mainMVdashboard'%}"> MurimiWangu</a>
-                <a href="{%url 'conditions'%}">Women In Markert</a>
-                <a href="{%url 'secondMVdashboard'%}">FowlRun</a>
-                {% comment %} <a href="{%url 'secondMVdashboard'%}">My Animals</a> {% endcomment %}
-              </div>
-            </div>
-          </div>
+         
           <div class="col-4">
             <div class="p-4 border shadow bg-light">
               <div class="header-grey ">
