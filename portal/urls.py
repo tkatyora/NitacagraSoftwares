@@ -6,7 +6,8 @@ from . import views
 urlpatterns = [
     #portal for nitacagra
     path('',views.dashboard , name='dashboard'),
-    path('View',views.Viewservices , name='PortalServices'),
+    # path('',views.admindashboard , name='admindashboard'),
+  
     path('users', views.viewUsers , name= 'viewUsers'),
     path('CreateAboutUs', views.CreateAboutUs , name= 'createAbout'),
     path('UpdateAboutUs/<int:pk>', views.UpdateAboutUs , name= 'updateAbout'),

@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required , permission_required
 from django.contrib.auth import login
 # Create your views here.
 serviceinfo = servicesTable.objects.all()
+PortalServices = servicesTable.objects.all() 
+portalServices = Detailed.objects.all()
 
 # function for services
 
@@ -17,28 +19,34 @@ serviceinfo = servicesTable.objects.all()
 def services(request):
     content = {}
     content = {
-        'service': serviceinfo
+        'services': serviceinfo
     }
     return render(request, 'Ourservices/offerredServices.html', content)
-def testservices(request):
-    content = {}
-    content = {
-        'service': serviceinfo
-    }
-    return render(request, 'Ourservices/testServices.html', content)
 
+#CRUD OPERATIONS OF SERVICE
+#1.READ
+@login_required(login_url='sign_in') 
+def Viewservices(request):
+    content ={}
+    content ={
+    'PortalServices' : PortalServices,
+    'portalServices' : portalServices
+   }    
     
- #VIEWA FOR ADDING SERVICES   
+    return render(request,'Ourservices/viewService.html',content)
+#2.CREATE
 @login_required(login_url='sign_in') 
 def addservices(request):
     if request.method == 'POST':
         form = addServiceForm(request.POST)
         if form.is_valid():
             form.save() 
-            messages.success(request, 'servive added succesfully')
+            mesage= f'servive added succesfully/nPlease Add Detailed Desciption of the Service'
+            messages.success(request,mesage)
             return redirect('detailed')
+           
         else:
-            messages.warning(request, 'Sorry servive not updated succesfully')
+            messages.warning(request, 'Sorry servive not added succesfully')
     else:
         form = addServiceForm()
     content = {}
@@ -48,26 +56,41 @@ def addservices(request):
     }
     return render(request, 'Ourservices/AddService.html', content)
 
+#3.UPDATE
+#4 DELETE
 
-@login_required(login_url='sign_in') 
-def addDetailedDisc(request ,ID):
-    if request.method == 'POST':
-        update = servicesTable.objects.get(id = ID )
-        form = DetailedForm(request.POST ,instance = update)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'servive added succesfully')
-            return redirect('detailed')
-        else:
-            messages.warning(request, 'Sorry servive not updated succesfully')
-    else:
-        form = addServiceForm()
+#CRUD OPERATIONS FOR DETAILED DISCRITION
+#1.READ
+def details(request):
     content = {}
     content = {
-        'form': form,
+        'service': serviceinfo
+    }
+    return render(request, 'Ourservices/detailed.html', content)
+
+#2.CREATE
+@login_required(login_url='sign_in') 
+def addDetailedDisc(request):
+    if request.method == 'POST':
+        DetailedForm = AddDetailedForm(request.POST)
+        if DetailedForm.is_valid():
+            DetailedForm.save()
+            messages.success(request, 'Detailed Discription Was Added/nYou Can Now Add Functinality')
+            return redirect('detailed')
+        else:
+            messages.warning(request, 'Sorry Detailed Discription Was not Added Correct Below Errors')
+    else:
+        DetailedForm = AddDetailedForm()
+    content = {}
+    content = {
+        'Detailedform': DetailedForm,
 
     }
     return render(request, 'Ourservices/AddDetailed.html', content)
+
+
+    
+ #VIEWA FOR ADDING SERVICES   
 
 
 @login_required(login_url='sign_in') 

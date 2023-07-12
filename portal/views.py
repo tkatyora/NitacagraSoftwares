@@ -15,7 +15,7 @@ from main.models import aboutUs ,advertisment
 orderInfo = order.objects.all()
 customer = CustomerWithoutAccount.objects.all()
 customerWithAccount = ContentCreater.objects.all()
-PortalServices = servicesTable.objects.all() 
+
 AllUsers = NitacagraUsers.objects.all()
 about_us = aboutUs.objects.all()
 homepage = advertisment.objects.all()
@@ -41,15 +41,7 @@ def viewUsers(request):
 
 #DASHBOARD FOR CUSTOMERS THE FIRST DASHBOARD THAT IS REACHED BY EVERYONE
 
-#VIEWING SERVICES IF A ADMIN PERSON IS LOGGED IN
-@login_required(login_url='sign_in') 
-def Viewservices(request):
-    content ={}
-    content ={
-    'PortalServices' : PortalServices
-   }    
-    
-    return render(request,'portal/PortalServices.html',content)
+
 
 @login_required(login_url='sign_in')
 def Profile(request):

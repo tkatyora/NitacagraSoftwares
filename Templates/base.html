@@ -118,7 +118,7 @@
                   ><big>About us</big> </a>
                   <a class="services nav-link active navs-link" href="{% url "newProjects" %}"> <big>What's New</big> </a
                 >
-                <input type="">
+               
               <a class="nav-link login" href="{% url "sign_in" %}"> <big>|Log In</big> </a>
                 {%else%}
                
@@ -126,12 +126,12 @@
                 <a href="" class="text-start nav-link a-tags p4 .navs-link  ">GoodDay   <span class="mx-3 login">     {{user.first_name}}</span> </a>
                 
           </div>
-          <!-- <form class="search" role="search">
+       {% comment %} <form class="search" role="search">
           <div class="seacrh d-flex ">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button  id = 'search-btn' class="btn  btn-outline-info" type="submit">Search</button>
           </div> 
-        </form> -->
+        </form>  {% endcomment %}
          <a href="" class="text-start nav-link a-tags .navs-link  "> <big><i class="fa-solid fa-circle-user"></i></big> {{user.email}}</a>
           <a class="nav-link login" href="{% url "logout" %}">| Log Out</a> 
                  {%endif%}
@@ -158,7 +158,6 @@
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
                   </ul>
               </div> 
-              
               <div class="col-6 col-md-2 mb-3"> 
                   <h5  class="header-blue">Get In Touch</h5> <hr>
                   <ul class="nav flex-column">
@@ -183,19 +182,19 @@
                   <li class="nav-item mb-2"><a href="https://www.instagram.com/" class="nav-link p-0 text-muted"><i class="fa-brands  a-tags fa-instagram"></i> Instagram</a></li>
                   <li class="nav-item mb-2"><a href="https://twitter.com/home"  class="nav-link p-0 text-muted"> <i class="fa-brands facebook fa-twitter"></i> Twitter</a></li>
                   <li class="nav-item mb-2"><a href="https://www.facebook.com/" class="nav-link p-0 text-muted"> <i class="fa-brands facebook a-tags fa-facebook"></i> Facebook</a></li>
-
                   </ul>
               </div>
+              <div class="col-md-5 offset-md-0 mb-3 ">
+                <form class="comment">
+                    <h5>Leave a comment</h5>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <input type="text" class="form-control" placeholder="Write Your Comment">
+                        <button  id ='comment'class="btn btn-outline-info" type="button">Submit</button>
+                    </div>
+                </form>
+              </div> 
           </div> 
-          <!-- <div class="col-md-5 offset-md-0 mb-3 ">
-              <form class="comment">
-                  <h5>Leave a comment</h5>
-                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                      <input type="text" class="form-control" placeholder="Write Your Comment">
-                      <button  id ='comment'class="btn btn-outline-info" type="button">Submit</button>
-                  </div>
-              </form>
-          </div>  -->
+           
     </div> 
     <div class="d-flex flex-column flex-sm-row mx-md-5 center justify-content-between py-4 my-4 border-top">
       <p> Develped by NITACAGRA SOFTWARES</p>

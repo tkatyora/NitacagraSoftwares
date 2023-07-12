@@ -1,0 +1,74 @@
+{% extends 'adminDashboard.html' %}
+ {%block content%} 
+ {%load static%}
+ {% load crispy_forms_tags %}
+<head>
+  <meta name="Key Words" content="Web Development, Free Blog Hosting,Static Websites,Web Application" />
+  <meta
+    name="description"
+    content="This page isViewing services offered by NitacagraSoftwares  
+    Such as Free Blog Hosting abd Teaching Learners Web Development"
+  />
+{% block title%}
+    <title>NitacagraSoftwares | View Service</title>
+{%endblock title%}
+</head>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"
+     style="width: 78%">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="table-responsive">
+          <h3 class="text-info">Services offered by NitacagraSoftwares</h3> <hr>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Service Number</th>
+              <th scope="col">Servive Name </th>
+              <th scope="col">Service Description</th>
+              <th scope="col">Service Image Link</th>
+              <th scope="col">Service Type</th>
+              <th scope="col">Service Price</th>
+              <th scope="col">View Service Functinality</th>
+              <th scope="col">Date Added</th>
+              <th scope="col">Date Updated</th>
+              
+              <th scope="col">Promotion</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            {%for data in portalServices%}
+            <tr>
+              <td>{{data.service.id}}</td>
+              <td>{{data.service.name}}</td>
+              <td>{{data.service.Discription}}</td>
+              <td>{{data.service.ImageUrl}}</td>
+              <td>{{data.type}}</td>
+              <td>{{data.Price}}</td>
+              <td>{{data.id}}</td>
+              <td>{{data.service.created_on}}</td>
+              <td>{{data.service.updated_on}}</td>
+              <td>{{data.specialOffer}}</td>
+              
+            </tr>
+            {%endfor%} 
+          </tbody>
+        </table>
+      </div>
+       
+      </div>
+
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+      <h2>Section title</h2>
+      
+    </main>
+  </div>
+</div>
+    <script src="../style/js/bootstrap.bundle.js"></script>
+    <script src="../JS/dashboard.js"></script>
+    
+
+  </body>
+   {%endblock content%} 
+  
+</html>

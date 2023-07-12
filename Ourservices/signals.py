@@ -4,13 +4,15 @@ from . import views
 from django.dispatch  import receiver
 
 
-@receiver(post_save, sender=servicesTable)
+
+
+@receiver(post_save, sender=servicesTable())
 def create_detailedDscription(sender,instance,created,*args,**kwargs):
     if created:
         DetailedDisc = Detailed.objects.create(
            service=instance 
         )
-        DetailedDisc.save
+        DetailedDisc.save()
 
 # creating the instance of the functinality after creating the Detailed explanations
 @receiver(post_save, sender=Detailed)

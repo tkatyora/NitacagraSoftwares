@@ -7,7 +7,7 @@ from datetime import datetime
 class addServiceForm(ModelForm):
     name = forms.ChoiceField(label=' Select Name Of The Service',choices=servicesTable().Name,required=True)
     #name =forms.CharField(, required=False,choices = servicesTable().Name)
-    picture =forms.ImageField(label='Select Picture Of service', required= False ,help_text='Picture Should be Less Than 2Mb' ,error_messages={
+    picture =forms.ImageField(label='Select Picture Of service', required= False ,help_text='Picture Should be of size 3000 x 2143' ,error_messages={
         'required':'The Image is required',
     })
     Discription=forms.CharField(label='Service Discription', required=True, help_text='Discription Should Be 150 words ',
@@ -17,67 +17,22 @@ class addServiceForm(ModelForm):
                                       'cols':5, 
                                   }
                               ))
-    specialOffer= forms.BooleanField(label='On Promotion', required=True, help_text='select if the Product is on Promotion')
-    type = [('standard','Standard'),('premium',"Premium"),('ecomerce','E-commerce'),('custom','Custom')]
-    Name =forms.ChoiceField(label='Select Type',choices=type, required=True)
-    Price= forms.DecimalField(label='Price' ,required=True,decimal_places=2)
-    Pages =forms.CharField(label='Enter Pages Details', max_length=60,  required=True , widget=forms.TextInput(
-                                  attrs={
-                                      
-                                       'placeholder':'example Maximun of 20 pages',
-                                       'class':'form-control input',}
-                              ))
-    Host =forms.CharField(label='Enter Hosting Platform',  max_length=50, required=True , widget=forms.TextInput(
-                                  attrs={
-                                      'rows':5,
-                                      'cols':5,
-                                       'placeholder':'example Hosted on render.com',
-                                       'class':'form-control input',}
-                              ))
-    HostDays =forms.CharField(label='Number oF Hosted Days', max_length=50, required=True ,
-                               widget=forms.Textarea(
-                                  attrs={
-                                      'rows':2,
-                                      'cols':5,
-                                      'placeholder':'example Hosted for 21 days each month',
-                                       'class':'form-control input',}
-                              ))
-    Responsive =forms.CharField(label='Enter Detaild On Responsvive Device', max_length=50, required=True , 
-                                widget=forms.Textarea(
-                                  attrs={
-                                      'rows':2,
-                                      'cols':5,
-                                      'placeholder':'example Responsive to Mobile,Laptops',
-                                       'class':'form-control input',}
-                              ))
-    SocialMedia =forms.CharField(label='Enter Details on Social Media', max_length=50, required=True , widget=forms.TextInput(
-                                  attrs={
-                                      'placeholder':'example Links To Facebook',
-                                       'class':'form-control input',}
-                              ))
-    seo= forms.BooleanField(label='SEO', required=True,)
+    specialOffer= forms.BooleanField(label='On Promotion', required=False, help_text='select if the Product is on Promotion')
     
     class Meta: 
         model = servicesTable
-        fields = ['name' ,'picture','Discription','specialOffer','DetailedDisc']
+        fields = ['name' ,'picture','Discription','specialOffer']
         
         
         
-        
-        
-        
-        
-        
-        
-        
-class DetailedForm(ModelForm):
-    type = [('standard','Standard'),('premium',"Premium"),('ecomerce','E-commerce'),('custom','Custom')]
-    Name =forms.ChoiceField(label='Select Type',choices=type, required=True)
-    
+             
+class AddDetailedForm(ModelForm):
+    #type = [('standard','Standard'),('premium',"Premium"),('ecomerce','E-commerce'),('custom','Custom')]
+    type =forms.CharField(label='Enter Type of Service', required=True)
     Price= forms.DecimalField(label='Price' ,required=True,decimal_places=2)
     class Meta: 
         model = Detailed
-        fields = ['Name' ,'Price',]
+        fields = ['type' ,'Price','service','specialOffer']
         
         
 class FunctionalityForm(ModelForm):
