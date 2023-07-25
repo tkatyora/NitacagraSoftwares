@@ -24,6 +24,8 @@ urlpatterns = [
     path('learning/',include("learning.urls")),
     path('ourservices/',include("Ourservices.urls")),
     path('portal/',include("portal.urls")),
+    path('Macramebags/',include("bags.urls")),
+    path('cosmotology/',include("cosmotology.urls")),
   
    
       

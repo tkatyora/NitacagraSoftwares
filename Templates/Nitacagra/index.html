@@ -10,8 +10,9 @@
 {%endblock title%}
 <main class="hero-index dropdown-disapper">
   <section class="carousel">
+    {% for data in advert  %}
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
+      {% comment %} <div class="carousel-indicators">
         <button
           type="button"
           data-bs-target="#myCarousel"
@@ -32,62 +33,69 @@
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
-      </div>
+      </div> {% endcomment %}
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        {%if data.slide == '1'%}
+        <div class="carousel-item  active" >
           <img
-            src="{%static '../../static/NITACACRAIMAGES/webpage3.jpg'%}"
+            src="{{data.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="For Projects Guides"
           />
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1 class="header-blue">Murimi Wangu.</h1>
-              <p>
-                A community for Farmers, Agronomist and Customers To Sell and
-                Buy Farming Products EveryWhere .
-              </p>
-              <p><a class="btn btn-lg btn-info" href="#">Comming Soon</a></p>
+
+              <h1 class="header-blue">{{data.name}}</h1>
+              <p class="fs-4" >{{data.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="8000">
+        {%endif%}
+        {% if data.slide == '2' %}
+         <div class="carousel-item" data-bs-interval="8000">
           <img
-            src="{% static '../../static/NITACACRAIMAGES/webpage1.jpg'%}"
+            src="{{data.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="Programmed Drone"
           />
           <div class="container">
             <div class="carousel-caption">
-              <h1 class="header-blue">FowlRun Monitoring System.</h1>
-              <p>
-                Digitalizing Your FowlRun Making it be in your hands Wherever
-                You go monitoring an controlling Your FowlRun
-              </p>
-
-              <p><a class="btn btn-lg btn-success" href="#">comming Soon</a></p>
+               <h1 class="header-blue">{{data.name}}</h1>
+              <p class="fs-4" >{{data.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
             </div>
           </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="9000">
+        </div> 
+        {%endif%}
+        {% if data.slide == "3" %}
+         <div class="carousel-item" data-bs-interval="9000">
           <img
-            src="{% static '../../static/NITACACRAIMAGES/webpage2.jpg'%}"
+           src="{{data.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="The spider web representing  website"
           />
 
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1 class="">Women In The Markert.</h1>
-              <p>
-                <strong>A platForm for Women In the Venting Sector</strong> .
-              </p>
-              <p><a class="btn btn-lg btn-color" href="#">Cooming Soon</a></p>
+               <div class="carousel-item" data-bs-interval="9000">
+              <h1 class="header-blue">{{data.name}}</h1>
+              <p class="fs-4" >{{data.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
-      <button
+            </div>
+          </div>
+        </div> 
+      </div>
+      {% else %}
+
+      {%endif%}
+        
+      
+      {% comment %} <button
         class="carousel-control-prev"
         type="button"
         data-bs-target="#myCarousel"
@@ -95,8 +103,8 @@
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-      </button>
-      <button
+      </button> {% endcomment %}
+      {% comment %} <button
         class="carousel-control-next"
         type="button"
         data-bs-target="#myCarousel"
@@ -104,64 +112,231 @@
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> {% endcomment %}
     </div>
+    {% endfor %}
   </section>
-<section class="product-services">
-        <div class="container text-start   services">
-        <h1 class=" p-4 text-center">Products And Services <hr></h1>
-      
-        <div class="row  g-5">
-          <div class="col-4">
-            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc1.jpg'%} " class="pic img-fluid" alt="Website Develpment">
-            <div class="p-4 border  shadow bg-light">
-              <div class="txt">
-               <h4 header >Website Development</h4>
-               <hr>
-                <p>
-                Nicole
-                </p>
+  <section class="product-services">
+        <div class="container text-start services">
+          <h2 class="p-4 text-start">
+            Special Services for You
+            <hr />
+          </h2>
+          <div class="row g-5">
+            <div class="col-4">
+               <img
+                src="  {% static '../static/NITACACRAIMAGES/pdctNsrvc1.jpg' %} "
+                class="pic img-fluid"
+                alt="Website Develpment"
+              />
+              <div class="p-4 border shadow bg-light">
+                <div class="">
+                  <h4 header>Website Development</h4>
+                  <hr />
+                  <p>
+                    Having Challenges in marketing Your Products,Use a website
+                    Which can help you to reach more people Get one of our
+                    Websites services
+                  </p>
+
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-secondary btnhover button-non-cursive"
+                  >
+                    <a href="offerredServices.html"
+                      ><i class="fa-solid text-info fa-circle-info"></i> More
+                    </a>
+                    Services
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img
+                src=" {% static '../static/NITACACRAIMAGES/pdctNsrvc4.jpg' %}"
+                class="pic img-fluid"
+                alt="Website Develpment"
+              />
+              <div class="p-4 border shadow bg-light">
+                <div class="">
+                  <h4 class="header">Blog Writting and Hosting</h4>
+                  <hr />
+                  <p>
+                    Do you have an intresting story to share or to educate
+                    people with ,But you dont have a platform to do so ,Use our
+                    Blog Hosting Platform for free
+                  </p>
+                  <br />
+
+                  <button
+                    type="button"
+                    class="btn btn-secondary btnhover button-non-cursive"
+                  >
+                    <a href="offerredServices.html"
+                      ><i class="fa-solid text-info fa-circle-info"></i> More
+                    </a>
+                    Services
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img
+                src="{% static '../static/NITACACRAIMAGES/prctNsrvc2.jpg' %}"
+                class="pic img-fluid"
+                alt="Website Develpment"
+              />
+              <div class="p-4 border shadow bg-light">
+                <div class="">
+                  <h4 class="header">Final Year Projet Guides</h4>
+                  <hr />
+                  <p>
+                    Is Final year Project a headache for you.Checkout our web
+                    Applications and Embedded sysytem project which can help you
+                    pass your final year project
+                  </p>
+
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-secondary btnhover button-non-cursive"
+                  >
+                    <a href="offerredServices.html"
+                      ><i class="fa-solid text-info fa-circle-info"></i> More
+                    </a>
+                    Services
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="new product-services mt-5">
+        <div class="container text-start services mb-5 mt-3">
+          <h2 class="p-4 text-start">
+            Did You know?
+            <hr />
+          </h2>
+          <div class="row g-5">
+            <div class="col-12 d-inline-flex">
+              <div class="img">
+                <img
+                src="{% static '../static/admin/imagies/almond.png' %}"
+                class="pic w-100 img-fluid"
+                alt="alomd shape"
+              />
                
-                <br />
-                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
-             </div>
+              </div>
+              <div class="p-4 border shadow-lg">
+                <h3 class="text-info">Cosmotology</h3>
+                <p class="lead fw-bolder">
+                  Almond Shaped Nail were brought to be used in manicure by
+                  Starlets like a young Elizabeth Taylor and I Love Lucy's
+                  Lucille Ball in ths 1950s.
+                </p>
+                <a
+                  class="text-success fw-bolder fs-5 text-decoration-none"
+                  href=""
+                  >Get Your Own Alomnd Shaped Nail Done for You</a
+                >
+              </div>
             </div>
           </div>
-          <div class="col-4">
-            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc4.jpg'%}"  class="pic img-fluid" alt="Website Develpment">
-            <div class="p-4 border  shadow bg-light">
-              <div class="txt">
-               <h4 class="header">Blog Writting and Hosting</h4>
-               <hr>
-                <p>
-                Nicole
-                </p>
-                <br />
-                
-                
-                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
-             </div>
+        </div>
+      </section>
+      <section class="product-services">
+        <div class="container text-start services">
+          <h2 class="p-4 text-start">
+            Daily Tips For Your
+            <hr />
+          </h2>
+          <div class="row g-5">
+            <div class="col-6 mb-5">
+              <div class="p-4 border shadow bg-light">
+                <div class="">
+                  <h4 header>Latest Tip</h4>
+                  <hr />
+                  <p>
+                    It's much easier to maintain longer natural nails with the almond or oval shape
+                     since the sides are less prone to impact and wear and tear.
+                  </p>
+
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-secondary btnhover button-non-cursive"
+                  >
+                    <a href="offerredServices.html">Read Blog articles </a>
+                  </button>
+                </div>
+              </div>
             </div>
+            <div class="col-6 mb-3">
+             
+              <div class="p-4 border shadow bg-light">
+                <div class="">
+                  <h4 class="header">Last Tip</h4>
+                  <hr />
+                  <p>
+                    Do you have an intresting story to share or to educate
+                    people with ,But you dont have a platform to do so ,Use our
+                    Blog Hosting Platform for free
+                  </p>
+                  <br />
+
+                  <button
+                    type="button"
+                    class="btn btn-secondary btnhover button-non-cursive"
+                  >
+                    <a href="offerredServices.html"
+                      >Read Blog articles
+                    </a>
+                   
+                  </button>
+                </div>
+              </div>
+            </div>
+            
           </div>
-          <div class="col-4">
-            <img src="{% static '../../static/NITACACRAIMAGES/pdctNsrvc4.jpg'%} " class="pic img-fluid" alt="Website Develpment">
-            <div class="p-4 border  shadow bg-light">
-              <div class="txt">
-               <h4 class="header">Pic16F877A Programming</h4>
-               <hr>
-                <p>
-                Nicole
-                </p>
+        </div>
+      </section>
+      <section class="new product-services mt-5">
+        <div class="container text-start services mb-5 mt-3">
+          <h2 class="p-4 text-start">
+           Whats New On Nitacagra Website?
+            <hr />
+          </h2>
+          <div class="row g-5">
+            <div class="col-12 d-inline-flex">
+              <div class="img">
+                <img
+                src="{% static '../static/admin/imagies/web-service.jpeg' %}"
+                class="pic w-100 img-fluid"
+                alt="alomd shape"
+              />
                
-                <br />
-                <button type="button" class="btn btn-secondary home button"> <a href = "{% url 'services'%}"> More </a> Services</button>
-             </div>
+              </div>
+              <div class="p-4 border shadow-lg">
+                <h3 class="text-info">Using Ecocash for payments</h3>
+                <p class="lead fw-bolder">
+                 You can now use ecosash when making your payments
+                  for the services that you wish that we could offer to you.
+                </p>
+                <a
+                  class="text-success fw-bolder fs-5 text-decoration-none"
+                  href=""
+                  >Get Started With The New Feature</a
+                >
+              </div>
             </div>
           </div>
-         
-         
-      </div>
-    </section>
+        </div>
+      </section>
+      <section>
+        <h3 class="text-center  mb-5">Thanks for choosing Nitacagra. <span class="text-info fst-italic"> Your Problem is our Concern</span>  </h3>
+      </section>
 </main>
-<script src=" {% static '../../static/JS/main.js'%}"></script>
+<script src=" {% static '../../static/JS/home.js'%}"></script>
 {%endblock content%}

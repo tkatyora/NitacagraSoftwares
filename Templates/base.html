@@ -1,9 +1,6 @@
 {% include 'style.html'%}
 {%load static %}
- <a class="nav-link active navs-link" aria-current="page"  href="{% url "home" %}">Home</a>     
-              <a id ='service' class="nav-link active navs-link" aria-current="page"  href="{% url "services" %}">Our Services</a>
-
-
+ 
   <body>
     <!-- the navbar -->
     <header>
@@ -35,8 +32,20 @@
              
 
               
-               <a class="nav-link active navs-link" aria-current="page"  href="{% url "home" %}"> <big>Home</big>  </a>     
-              <a id ='service' class="nav-link active navs-link" aria-current="page"  href="{% url "services" %}"> <big>Our Services</big> </a>      
+               <a
+                class="nav-link fs-6 active navs-link"
+                aria-current="page"
+                 href="{% url "home" %}"
+                ><i class="text-info fa-solid fa-house"></i> Home</a
+              >
+              <a
+                id="service"
+                class="nav-link active fs-6 navs-link"
+                href="{% url "services" %}"
+              >
+                <i class="facebook fa-solid text-info fa-cart-shopping"> </i> Our
+                Services</a
+              >      
               <div id="dropdown-menu" class="dropdown-service">
                 <div
                   class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px"
@@ -65,9 +74,25 @@
                 </div>
               </div>
             </div>
+            <a
+              class="services nav-link active navs-link"
+              href="{% url 'bags' %}"
+              ><i class="text-info fa-solid fa-bag-shopping"></i>  MaCrame
+              Bags</a
+            >
+            <a
+              class="services nav-link active navs-link"
+              href="{% url 'cosmotology' %}"
+            >
+              <i class="fa-solid fa-user text-info"></i> Cosmotology</a
+            >
+            <a
+              class="services nav-link active navs-link"
+              href="{% url "blog"%}"
+              ><i class="fa-solid text-info fa-book-open"></i> Blog</a
+            >
 
-               <a id="blog" class="nav-link active navs-link"  href="{% url "blog"%}"
-                  > <big> Blog</big></a>
+               
             <div id="dropdown-menu2" class="dropdown-blog">
               <div
                 class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px"
@@ -112,14 +137,23 @@
                 </ul>
               </div>
             </div>
-             <a
-                  class="services nav-link active navs-link" 
-                  href="{% url "about" %}"
-                  ><big>About us</big> </a>
-                  <a class="services nav-link active navs-link" href="{% url "newProjects" %}"> <big>What's New</big> </a
-                >
-               
-              <a class="nav-link login" href="{% url "sign_in" %}"> <big>|Log In</big> </a>
+              <a
+              id="service"
+              class="nav-link active navs-link"
+               href="{% url "newProjects" %}">
+              <i class="fa-solid fa-circle-question text-info"></i> Did You
+              Know</a
+            >
+            <a
+              class="services fs-6 nav-link active navs-link"
+              href="{% url "about" %}"
+            >
+              <i class="fa-solid fa-people-group text-info"></i> About Us
+            </a>
+                <a class="nav-link login" href="{% url "sign_in" %}"
+              ><i class="fa-solid fa-circle-user"></i> Log In</a
+            >
+             
                 {%else%}
                
                
@@ -185,13 +219,13 @@
                   </ul>
               </div>
               <div class="col-md-5 offset-md-0 mb-3 ">
-                <form class="comment">
+                {% comment %} <form class="comment">
                     <h5>Leave a comment</h5>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                         <input type="text" class="form-control" placeholder="Write Your Comment">
                         <button  id ='comment'class="btn btn-outline-info" type="button">Submit</button>
                     </div>
-                </form>
+                </form> {% endcomment %}
               </div> 
           </div> 
            

@@ -1,27 +1,31 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class advertisment(models.Model):
-    Section =[('part1','Carousel/HomeSlide'),
-              ('part2','Products and Services'),
-              ('services','Offered Services /Slides'),]
-    buttons =[('servicebtn','More Services'),
-              ('Guidesbtn','  More Projects Guides'),
-              ('signUp','Sign Up Today'),
-              ('contact','Contact Today'),
-              ('learn','Learn More'),]
-    section = models.CharField(max_length=20,null=True,choices=Section)
-    name = models.CharField(max_length=20,null=True)
+    Slides = [('1','One'),('2','Two'),('3','Three')]
+    name = models.CharField(max_length=50,null=True,blank=True)
     image = models.ImageField(upload_to = 'pics' , blank = True)
-    disc = models.TextField(null=True)
-    Homebutton = models.CharField(max_length=20, blank = True ,choices=buttons)
+    disc = models.TextField(null=True ,blank=True)
+    Homebutton = models.CharField(max_length=20, blank = True )
     createdOn =models.DateTimeField(null=True, auto_now_add=True)
     Updated = models.DateField(null=True, auto_now=True, auto_now_add=False)
-    
+    slide = models.CharField(_("slide number"), max_length=50, null=True , choices=Slides)
+
     
     
     def __str__(self):
-        return f'{self.section} ==> { self.name}'
+        return f'Advert for  { self.name}'
+    
+    
+    @property
+    def ImageUrl(self):
+        try:
+            url = self.image.url
+        except:
+             url = ''
+             
+        return url
     
 class aboutUs(models.Model):
     history =models.TextField(null=True,blank=True)

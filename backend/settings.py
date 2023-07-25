@@ -81,6 +81,8 @@ INSTALLED_APPS = [
     'portal',
     'learning',
     'Tips',
+    'cosmotology',
+    'bags',
     
     #COMMON APPLICATION    
     'Accounts.apps.AccountsConfig',

@@ -12,7 +12,7 @@ def home(request):
     content ={
         'advert' : advertismentdata
     }
-    return render(request , 'Nitacagra/home.html' , content)
+    return render(request , 'Nitacagra/index.html' , content)
 
 @unathenicated_user
 def about(request):
