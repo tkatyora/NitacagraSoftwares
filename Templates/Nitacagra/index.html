@@ -10,9 +10,8 @@
 {%endblock title%}
 <main class="hero-index dropdown-disapper">
   <section class="carousel">
-    {% for data in advert  %}
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      {% comment %} <div class="carousel-indicators">
+       <div class="carousel-indicators">
         <button
           type="button"
           data-bs-target="#myCarousel"
@@ -33,55 +32,51 @@
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
-      </div> {% endcomment %}
+      </div>
       <div class="carousel-inner">
-        {%if data.slide == '1'%}
+        
         <div class="carousel-item  active" >
           <img
-            src="{{data.ImageUrl}}"
+            src="{{first_slide.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="For Projects Guides"
           />
           <div class="container">
             <div class="carousel-caption text-start">
 
-              <h1 class="header-blue">{{data.name}}</h1>
-              <p class="fs-4" >{{data.disc}}</p>
-            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
+              <h1 class="header-blue">{{first_slide.name}}</h1>
+              <p class="fs-4" >{{first_slide.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{first_slide.Homebutton}}</a></p>
             </div>
           </div>
         </div>
-        {%endif%}
-        {% if data.slide == '2' %}
+        
          <div class="carousel-item" data-bs-interval="8000">
           <img
-            src="{{data.ImageUrl}}"
+            src="{{second_slide.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="Programmed Drone"
           />
           <div class="container">
             <div class="carousel-caption">
-               <h1 class="header-blue">{{data.name}}</h1>
-              <p class="fs-4" >{{data.disc}}</p>
-            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
+               <h1 class="header-blue">{{second_slide.name}}</h1>
+              <p class="fs-4" >{{second_slide.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{second_slide.Homebutton}}</a></p>
             </div>
           </div>
         </div> 
-        {%endif%}
-        {% if data.slide == "3" %}
          <div class="carousel-item" data-bs-interval="9000">
           <img
-           src="{{data.ImageUrl}}"
+           src="{{last_slide.ImageUrl}}"
             class="img-fluid d-block w-100"
             alt="The spider web representing  website"
           />
 
           <div class="container">
             <div class="carousel-caption text-end">
-               <div class="carousel-item" data-bs-interval="9000">
-              <h1 class="header-blue">{{data.name}}</h1>
-              <p class="fs-4" >{{data.disc}}</p>
-            <p><a id='home' class="btn btn-lg btn-info" href="#">{{data.Homebutton}}</a></p>
+              <h1 class="text-warning">{{last_slide.name}}</h1>
+              <p class="fs-4" >{{last_slide.disc}}</p>
+            <p><a id='home' class="btn btn-lg btn-info" href="#">{{last_slide.Homebutton}}</a></p>
             </div>
           </div>
         </div> 
@@ -90,12 +85,9 @@
           </div>
         </div> 
       </div>
-      {% else %}
-
-      {%endif%}
-        
+     
       
-      {% comment %} <button
+      <button
         class="carousel-control-prev"
         type="button"
         data-bs-target="#myCarousel"
@@ -103,8 +95,8 @@
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-      </button> {% endcomment %}
-      {% comment %} <button
+      </button> 
+       <button
         class="carousel-control-next"
         type="button"
         data-bs-target="#myCarousel"
@@ -112,9 +104,9 @@
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button> {% endcomment %}
+      </button> 
     </div>
-    {% endfor %}
+    
   </section>
   <section class="product-services">
         <div class="container text-start services">

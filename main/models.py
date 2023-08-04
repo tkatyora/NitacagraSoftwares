@@ -11,7 +11,6 @@ class advertisment(models.Model):
     createdOn =models.DateTimeField(null=True, auto_now_add=True)
     Updated = models.DateField(null=True, auto_now=True, auto_now_add=False)
     slide = models.CharField(_("slide number"), max_length=50, null=True , choices=Slides)
-
     
     
     def __str__(self):
@@ -42,4 +41,14 @@ class aboutUs(models.Model):
     def __str__(self):
         return f'About Us Information last updated on {self.visionMision}'
    
+class didYouKnow(models.Model):
+    service = [('cosmo','Consmotology'),('soft','SOftware'),('hair','Hair Dressing')]
+    body = models.TextField(null = True)   
+    image = models.ImageField(upload_to = 'pics' , blank = True)
+    link = models.TextField(null = True) 
+    service = models.CharField(_("Service Offered"), max_length=50 , null=True, choices=service)
+    date = models.DateField(_(""), auto_now=True, auto_now_add=False , null=False) 
+    
+    def __str__(self):
+        return self.body
     
